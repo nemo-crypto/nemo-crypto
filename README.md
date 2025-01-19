@@ -13,6 +13,8 @@
 <img height="60" src="./tv.png" />
 <img height="60" src="./echarts.png" />
 <img height="60" src="./threeJs.png" />
+<img height="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" />
+<img height="60" src="./sentry.png" />
 </span>
 
 
