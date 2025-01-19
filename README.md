@@ -18,7 +18,7 @@
 <img height="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" />
 <img height="10" src="./list.png" />
 <img height="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" />
-<img height="10" src="./list.png" />
+<a href="https://www.tradingview.com/"><img height="10" src="./list.png" /></a>
 <img height="60" src="./tv.png" />
 <img height="10" src="./list.png" />
 <img height="60" src="./echarts.png" />
