@@ -12,6 +12,7 @@
 <img height="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" />
 <img height="60" src="./tv.png" />
 <img height="60" src="./echarts.png" />
+<img height="60" src="./threeJs.png" />
 </span>
 
 
