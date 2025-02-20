@@ -1,4 +1,4 @@
-<span > 
+<!--  <span > 
 <img height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" />
 <img height="10" src="./list.png" />
 <img height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" />
@@ -26,7 +26,7 @@
 <img height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" />
 <img height="10" src="./list.png" />
 <img height="50" src="./sentry.png" />
-</span>
+</span> -->
 
 [![nemo-crypto](https://github-profile-trophy.vercel.app/?username=nemo-crypto)](https://github.com/ryo-ma/github-profile-trophy)
 [![nemo-crypto](https://github-readme-stats.vercel.app/api?username=nemo-crypto)](https://github.com/anuraghazra/github-readme-stats)
