@@ -1,3 +1,21 @@
+Hi there! 👋
+I’m Nemo, a frontend developer who turns coffee into code and dreams into responsive designs. 🚀
+
+I’m fluent in HTML, CSS, and JavaScript, but my real superpower is debugging CSS for hours only to realize I forgot a semicolon. 😅
+
+When I’m not battling z-index or convincing flexbox to behave, you can find me arguing with my laptop about why console.log("why isn't this working?") isn’t giving me the answers I want.
+
+I believe in three things:
+
+DRY (Don’t Repeat Yourself) – unless it’s pizza. 🍕
+
+Mobile-first design – because nobody likes a broken layout on their phone. 📱
+
+Dark mode everything – my eyes thank me every day. 🌙
+
+I’m here to make the web a prettier (and slightly funnier) place, one div at a time. Let’s build something awesome together! 💻✨
+
+P.S. If my code looks weird, I blame it on the cat walking on my keyboard.
 <!--  <span > 
 <img height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" />
 <img height="10" src="./list.png" />
