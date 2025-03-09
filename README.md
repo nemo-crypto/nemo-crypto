@@ -1,13 +1,33 @@
-Hi there! 👋
-I’m Nemo, a frontend developer who turns coffee into code and dreams into responsive designs. 🚀
-I’m fluent in HTML, CSS, and JavaScript, but my real superpower is debugging CSS for hours only to realize I forgot a semicolon. 😅
-When I’m not battling z-index or convincing flexbox to behave, you can find me arguing with my laptop about why console.log("why isn't this working?") isn’t giving me the answers I want.
-I believe in three things:
-  DRY (Don’t Repeat Yourself) – unless it’s pizza. 🍕
-  Mobile-first design – because nobody likes a broken layout on their phone. 📱
-  Dark mode everything – my eyes thank me every day. 🌙
-I’m here to make the web a prettier (and slightly funnier) place, one div at a time. Let’s build something awesome together! 💻✨
-P.S. If my code looks weird, I blame it on the cat walking on my keyboard.
+# Hi there, I'm Nemo! 👋
+
+## Frontend Developer | Code Enthusiast | Professional Debugger 🐛
+
+### About Me
+- 🌐 **I turn coffee into code** and bugs into features (just kidding, I fix them... most of the time).
+- 🎨 **I make pixels dance** – HTML, CSS, and JavaScript are my paintbrushes.
+- 🚀 **I love building things** that look good and work even better.
+- 🧠 **I have a love-hate relationship with JavaScript frameworks** – React is my best frenemy.
+- 🕵️‍♂️ **I debug like a detective** – console.log is my magnifying glass.
+
+### My Skills
+- **Languages**: JavaScript (ES6+), TypeScript, HTML5, CSS3 (Sass/SCSS)
+- **Frameworks/Libraries**: React, Vue.js, Angular (yes, I survived AngularJS)
+- **Tools**: Webpack, Vite, Git, VS Code (dark mode only, obviously)
+- **Design**: Figma, Adobe XD, and a lot of "inspiration" from Dribbble.
+
+### Fun Facts About Me
+- 🐱 **I have a cat named `const`** – because it’s always constant(ly) hungry.
+- 🎮 **I’m a gamer** – I debug IRL and in-game (RIP my K/D ratio).
+- 🍕 **I’m powered by pizza** – pepperoni is my favorite dependency.
+- 🧩 **I solve puzzles** – both in code and in real life (Rubik’s Cube, anyone?).
+
+### My Coding Philosophy
+```javascript
+if (codeWorks) {
+  console.log("Ship it! 🚀");
+} else {
+  console.log("Time for more coffee ☕");
+}
 <!--  <span > 
 <img height="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" />
 <img height="10" src="./list.png" />
