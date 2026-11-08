@@ -5,16 +5,18 @@
 </p>
 
 <p align="center">
-  <a href="#-about-me">About</a> ·
-  <a href="#-what-i-build">What I Build</a> ·
-  <a href="#-my-stack">Tech Stack</a> ·
-  <a href="#-ai-agents--automation">Agents</a> ·
-  <a href="#-beyond-the-terminal">Off Duty</a>
+  <a href="#about">About</a> ·
+  <a href="#build">What I Build</a> ·
+  <a href="#stack">Tech Stack</a> ·
+  <a href="#agents">Agents</a> ·
+  <a href="#off-duty">Off Duty</a>
 </p>
 
 <p align="center">
   <strong>Full-Stack Developer · Web3 Builder · Professional Debugger 🐛</strong>
 </p>
+
+<a name="about"></a>
 
 ## 👋 About Me
 
@@ -33,6 +35,8 @@ My work spans public-chain applications, prediction markets, and exchange produc
 
 </details>
 
+<a name="build"></a>
+
 ## 🚀 What I Build
 
 <details open>
@@ -47,6 +51,8 @@ My work spans public-chain applications, prediction markets, and exchange produc
 | **🔮 Web3 & Prediction Markets** | Wallet-connected applications, transaction flows, market discovery, live probabilities, positions, and settlement views. Making complex states understandable, one fewer “pending…” at a time. |
 
 </details>
+
+<a name="stack"></a>
 
 ## 🧰 My Stack
 
@@ -92,6 +98,8 @@ Git · VS Code · Figma — and a little inspiration from Dribbble.
 
 </details>
 
+<a name="agents"></a>
+
 ## 🤖 AI Agents & Automation
 
 <details open>
@@ -108,6 +116,8 @@ Areas I’m exploring include on-chain research, market summaries, event alerts,
 The goal: fewer copy-paste rituals, more time for problems worth solving.
 
 </details>
+
+<a name="off-duty"></a>
 
 ## 🎮 Beyond the Terminal
 
