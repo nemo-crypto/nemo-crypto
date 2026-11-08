@@ -1,36 +1,145 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
-<title id="title">Nemo — Full-Stack Developer and Web3 Builder</title>
-<desc id="desc">A dark terminal-inspired banner connecting web, mobile, backend, blockchain data, and agent automation.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+<title id="title">Nemo — Full Stack. On Chain. Beyond the Browser.</title>
+<desc id="desc">An animated cyber console with neon orbital paths, connected stack nodes, looping neon fireworks, and a decorative market waveform. Full-stack development, mobile apps, blockchain data, and agent automation.</desc>
 <defs>
-<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1220"/><stop offset="1" stop-color="#14152d"/></linearGradient>
-<linearGradient id="accent"><stop stop-color="#5eead4"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
-<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#94a3b8" stroke-opacity=".055"/></pattern>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#060b16"/><stop offset=".6" stop-color="#0c1027"/><stop offset="1" stop-color="#140c29"/></linearGradient>
+  <linearGradient id="neon"><stop stop-color="#42f8d0"/><stop offset=".5" stop-color="#63b3ff"/><stop offset="1" stop-color="#d27bff"/></linearGradient>
+  <radialGradient id="aura"><stop stop-color="#7353ff" stop-opacity=".25"/><stop offset="1" stop-color="#7353ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="core"><stop stop-color="#1f3149"/><stop offset="1" stop-color="#0a1326"/></radialGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#8498cb" stroke-opacity=".065"/></pattern>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <clipPath id="frame"><rect x="1" y="1" width="1198" height="518" rx="24"/></clipPath>
 </defs>
-<rect x="1" y="1" width="1198" height="438" rx="24" fill="url(#bg)" stroke="#334155"/>
-<rect x="1" y="1" width="1198" height="438" rx="24" fill="url(#grid)"/>
-<path d="M36 2H1164" stroke="url(#accent)" stroke-width="3"/>
+<style>
+  .orbit{transform-origin:958px 253px;animation:spin 42s linear infinite}
+  .reverse{animation-direction:reverse;animation-duration:58s}
+  .pulse{animation:pulse 4s ease-in-out infinite}
+  .flow{stroke-dasharray:6 16;animation:flow 12s linear infinite}
+  .cursor{animation:blink 1.8s steps(2,end) infinite}
+  .firework{pointer-events:none}
+  .spark{opacity:0;animation:spark 7.2s cubic-bezier(.15,.6,.35,1) infinite;animation-delay:var(--delay)}
+  .burst-ring{opacity:0;animation:burst-ring 7.2s ease-out infinite;animation-delay:var(--delay)}
+  .rocket{opacity:0;animation:launch 7.2s ease-out infinite;animation-delay:var(--delay)}
+  @keyframes launch{0%{opacity:0;transform:translateY(110px)}3%{opacity:.85}12%{opacity:.95;transform:translateY(0)}15%,100%{opacity:0;transform:translateY(0)}}
+  @keyframes spark{0%,12%{opacity:0;transform:translate(0,0) scale(.5)}15%{opacity:1;transform:translate(0,0) scale(1.2)}34%{opacity:.9}48%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}}
+  @keyframes burst-ring{0%,13%{opacity:0;transform:scale(.05)}16%{opacity:.65}38%,100%{opacity:0;transform:scale(1)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pulse{50%{opacity:.45}}
+  @keyframes flow{to{stroke-dashoffset:-220}}
+  @keyframes blink{50%{opacity:0}}
+  @media(prefers-reduced-motion:reduce){.orbit,.pulse,.flow,.cursor,.spark,.burst-ring,.rocket{animation:none}.firework{display:none}}
+</style>
+<g clip-path="url(#frame)">
+<rect width="1200" height="520" fill="url(#bg)"/>
+<rect width="1200" height="520" fill="url(#grid)"/>
+<ellipse cx="960" cy="250" rx="340" ry="310" fill="url(#aura)"/>
+<path d="M0 435L1200 305M0 460L1200 330M0 485L1200 355M0 510L1200 380" stroke="#6374b8" stroke-opacity=".065"/>
+<path d="M24 1H1176" stroke="url(#neon)" stroke-width="3"/>
+<!-- Looping decorative fireworks, behind text and interface elements. -->
+<g class="firework" aria-hidden="true">
+<g transform="translate(690 151)" style="--delay:-1.4s" fill="#42f8d0" stroke="#42f8d0">
+<path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
+<circle class="burst-ring" r="62.9" fill="none" stroke-width="1"/>
+<circle class="spark" r="2" stroke="none" style="--dx:74.0px;--dy:17.0px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:47.3px;--dy:34.2px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:56.7px;--dy:64.6px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:25.2px;--dy:60.6px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:12.8px;--dy:89.9px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-8.7px;--dy:66.6px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-37.0px;--dy:81.1px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-38.5px;--dy:49.3px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-69.5px;--dy:42.3px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-50.3px;--dy:17.0px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-69.5px;--dy:-8.3px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-38.5px;--dy:-15.3px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-37.0px;--dy:-47.1px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-8.7px;--dy:-32.6px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:12.8px;--dy:-55.9px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:25.2px;--dy:-26.6px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:56.7px;--dy:-30.6px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:47.3px;--dy:-0.2px"/>
+</g>
+<g transform="translate(1090 137)" style="--delay:-3.8s" fill="#c38aff" stroke="#c38aff">
+<path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
+<circle class="burst-ring" r="56.1" fill="none" stroke-width="1"/>
+<circle class="spark" r="2" stroke="none" style="--dx:66.0px;--dy:17.0px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:42.2px;--dy:32.3px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:50.6px;--dy:59.4px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:22.4px;--dy:55.9px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:11.5px;--dy:82.0px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-7.8px;--dy:61.2px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-33.0px;--dy:74.2px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-34.4px;--dy:45.8px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-62.0px;--dy:39.6px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-44.9px;--dy:17.0px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-62.0px;--dy:-5.6px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-34.4px;--dy:-11.8px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-33.0px;--dy:-40.2px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-7.8px;--dy:-27.2px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:11.5px;--dy:-48.0px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:22.4px;--dy:-21.9px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:50.6px;--dy:-25.4px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:42.2px;--dy:1.7px"/>
+</g>
+<g transform="translate(742 377)" style="--delay:-6.2s" fill="#ffd487" stroke="#ffd487">
+<path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
+<circle class="burst-ring" r="49.3" fill="none" stroke-width="1"/>
+<circle class="spark" r="2" stroke="none" style="--dx:58.0px;--dy:17.0px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:37.1px;--dy:30.5px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:44.4px;--dy:54.3px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:19.7px;--dy:51.2px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:10.1px;--dy:74.1px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-6.8px;--dy:55.8px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-29.0px;--dy:67.2px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-30.2px;--dy:42.4px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-54.5px;--dy:36.8px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-39.4px;--dy:17.0px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-54.5px;--dy:-2.8px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-30.2px;--dy:-8.4px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:-29.0px;--dy:-33.2px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:-6.8px;--dy:-21.8px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:10.1px;--dy:-40.1px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:19.7px;--dy:-17.2px"/>
+<circle class="spark" r="2" stroke="none" style="--dx:44.4px;--dy:-20.3px"/>
+<circle class="spark" r="1.4" stroke="none" style="--dx:37.1px;--dy:3.5px"/>
+</g>
+</g>
 <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
-<circle cx="42" cy="34" r="5" fill="#fb7185"/><circle cx="62" cy="34" r="5" fill="#fbbf24"/><circle cx="82" cy="34" r="5" fill="#5eead4"/>
-<text x="108" y="39" fill="#94a3b8" font-size="13">nemo@github: ~/build-something</text>
-<text x="1156" y="39" text-anchor="end" fill="#5eead4" font-size="12">FULL STACK / FULL CURIOSITY</text>
-<path d="M32 58H1168" stroke="#273449"/>
-<text x="48" y="109" fill="#5eead4" font-size="16">$ whoami</text>
-<text x="44" y="199" fill="#f1f5f9" font-size="84" font-weight="800" letter-spacing="-5">Hey, I'm Nemo<tspan fill="#5eead4">.</tspan></text>
-<text x="48" y="244" fill="#c4b5fd" font-size="22" font-weight="700">FULL-STACK DEVELOPER / WEB3 BUILDER</text>
-<text x="48" y="287" fill="#cbd5e1" font-size="17">From pixels to pipelines. From wallets to workflows.</text>
-<text x="48" y="315" fill="#94a3b8" font-size="15">I ship the interface. And the services behind it.</text>
-<rect x="48" y="354" width="130" height="32" rx="16" fill="#102c2d" stroke="#24504e"/>
-<text x="113" y="375" text-anchor="middle" fill="#5eead4" font-size="12">COFFEE → CODE</text>
-<text x="199" y="375" fill="#94a3b8" font-size="12">professional debugger, occasionally by choice</text>
-<rect x="813" y="91" width="339" height="296" rx="14" fill="#0b1220" stroke="#334155"/>
-<text x="835" y="122" fill="#64748b" font-size="12">// the stack, connected</text>
-<path d="M837 139H1128" stroke="#273449"/>
-<text x="835" y="173" fill="#5eead4" font-size="15">01  WEB + MOBILE</text>
-<text x="871" y="197" fill="#94a3b8" font-size="12">Next / Nuxt / Flutter / RN</text>
-<text x="835" y="233" fill="#93c5fd" font-size="15">02  SERVICES + DATA</text>
-<text x="871" y="257" fill="#94a3b8" font-size="12">Go / Rust / Node.js</text>
-<text x="835" y="293" fill="#c4b5fd" font-size="15">03  CHAIN + AUTOMATION</text>
-<text x="871" y="317" fill="#94a3b8" font-size="12">Web3 / market feeds / agents</text>
-<path d="M837 339H1128" stroke="#273449"/>
-<text x="835" y="365" fill="#64748b" font-size="12">&gt; build. debug. ship. repeat.</text>
-</g></svg>
+<circle cx="34" cy="29" r="4" fill="#ff668c"/><circle cx="50" cy="29" r="4" fill="#ffca67"/><circle cx="66" cy="29" r="4" fill="#42f8d0"/>
+<text x="90" y="34" fill="#8b9ab9" font-size="12">nemo.dev / personal-console</text>
+<text x="1166" y="34" text-anchor="end" fill="#42f8d0" font-size="12">WEB · MOBILE · BACKEND · WEB3</text>
+<path d="M24 51H1176" stroke="#24304b"/>
+<text x="46" y="102" fill="#42f8d0" font-size="13" letter-spacing="3">// HELLO, WORLD. HELLO, CHAIN.</text>
+<text x="40" y="241" fill="url(#neon)" font-size="154" font-weight="900" letter-spacing="-9">NEMO<tspan fill="#eaf2ff">.</tspan></text>
+<text x="47" y="285" fill="#eef3ff" font-size="24" font-weight="700" letter-spacing="1">FULL STACK. ON CHAIN.</text>
+<text x="47" y="320" fill="#8fa7cf" font-size="24" font-weight="700" letter-spacing="1">BEYOND THE BROWSER.</text>
+<text x="47" y="363" fill="#aebbd4" font-size="15">From pixels to pipelines. From wallets to workflows.</text>
+<rect x="47" y="388" width="473" height="39" rx="6" fill="#0a1520" stroke="#23403f"/>
+<text x="63" y="413" fill="#42f8d0" font-size="14">$ build --full-stack --with-coffee</text>
+<rect class="cursor" x="375" y="399" width="8" height="16" fill="#42f8d0"/>
+<text x="47" y="461" fill="#778aa8" font-size="12">Professional debugger. Occasionally by choice.</text>
+<!-- Decorative orbital architecture; no live metrics. -->
+<g fill="none" stroke-width="1">
+<circle cx="958" cy="253" r="153" stroke="#293452"/>
+<circle cx="958" cy="253" r="130" stroke="#20334d" stroke-dasharray="2 9"/>
+<ellipse cx="958" cy="253" rx="198" ry="75" transform="rotate(-35 958 253)" stroke="#327a83" stroke-opacity=".65"/>
+<ellipse cx="958" cy="253" rx="198" ry="75" transform="rotate(35 958 253)" stroke="#7252a6" stroke-opacity=".65"/>
+</g>
+<g class="orbit" fill="none"><circle cx="958" cy="253" r="153" stroke="#42f8d0" stroke-width="2" stroke-dasharray="65 897"/><circle cx="1111" cy="253" r="4" fill="#42f8d0" filter="url(#glow)"/></g>
+<g class="orbit reverse" fill="none"><circle cx="958" cy="253" r="171" stroke="#b482ff" stroke-opacity=".7" stroke-dasharray="30 1044"/><circle cx="787" cy="253" r="3" fill="#b482ff"/></g>
+<path class="flow" d="M770 253H892M1024 253H1146M958 82V188M958 318V425" stroke="#68cce4" stroke-opacity=".55" fill="none"/>
+<path d="M958 186L1016 220V286L958 320L900 286V220Z" fill="url(#core)" stroke="url(#neon)" stroke-width="2"/>
+<path d="M958 198L1005 226V280L958 308L911 280V226Z" fill="none" stroke="#304266"/>
+<text x="958" y="266" text-anchor="middle" fill="#effbff" font-size="39" font-weight="700">&lt;/&gt;</text>
+<g font-size="11" text-anchor="middle">
+<rect x="897" y="78" width="122" height="30" rx="6" fill="#101c2b" stroke="#285b61"/><text x="958" y="98" fill="#62f4d6">WEB + MOBILE</text>
+<rect x="1067" y="236" width="109" height="32" rx="6" fill="#141a32" stroke="#48587f"/><text x="1121" y="257" fill="#a6caff">GO / RUST</text>
+<rect x="899" y="404" width="118" height="30" rx="6" fill="#1b1431" stroke="#534071"/><text x="958" y="424" fill="#cca5ff">CHAIN + DATA</text>
+<rect x="734" y="237" width="102" height="30" rx="6" fill="#101c2b" stroke="#285b61"/><text x="785" y="257" fill="#62f4d6">AI AGENTS</text>
+</g>
+<path d="M745 469H787L798 459L809 475L824 446L839 461L856 455H881L895 436L910 455H937L951 446L963 459L981 432L997 444L1013 426L1028 436L1045 416L1060 432L1076 421L1091 433H1160" fill="none" stroke="url(#neon)" stroke-width="1.5" opacity=".7"/>
+<text x="46" y="501" fill="#536785" font-size="10" letter-spacing="2">BUILD / DEBUG / SHIP / REPEAT</text>
+<text x="1160" y="501" text-anchor="end" fill="#536785" font-size="10" letter-spacing="2">LESS FRICTION. MORE FLOW.</text>
+</g></g>
+<rect x="1" y="1" width="1198" height="518" rx="24" fill="none" stroke="#2c3654"/>
+</svg>

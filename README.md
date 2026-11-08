@@ -38,7 +38,7 @@ My work spans public-chain applications, prediction markets, and exchange produc
 
 ## 🧰 My Stack
 
-![Full-stack toolbox: web, mobile, backend, and agent frameworks](./assets/stack.svg)
+![Four capability modules: web interfaces, mobile and mini apps, backend and chain data, agents and automation](./assets/stack.svg)
 
 **Frontend — where people meet the product**
 
