@@ -15,15 +15,15 @@
 | [angular6-material](https://github.com/nemo-crypto/angular6-material/blob/master/README.md) | Angular 6、Material、ECharts | 重写功能、服务配置、4201端口和历史工具链说明 |
 | [bit-request](https://github.com/nemo-crypto/bit-request/blob/main/README.md) | Axios、dumi、father | 补充真实导出、默认参数、重试与业务接口适配 |
 | [bit-utils](https://github.com/nemo-crypto/bit-utils/blob/main/README.md) | Rollup、TypeDoc、缓存和队列 | 补充入口、缺失postinstall文件及构建错误处理边界 |
-| [comment-app](https://github.com/nemo-crypto/comment-app/blob/master/README.md) | MUI、jQuery、H5页面 | 纠正仅标uni-app的描述，补齐登录与实验入口 |
-| [common-interview-coding-questions](https://github.com/nemo-crypto/common-interview-coding-questions/blob/main/README.md) | Markdown学习资料 | 明确没有执行工程，补充导航与示例权限缺口 |
+| [comment-app](https://github.com/nemo-crypto/uni-app/blob/master/README.md) | MUI、jQuery、H5页面 | 纠正仅标uni-app的描述，补齐登录与实验入口 |
+| [common-interview-coding-questions](https://github.com/nemo-crypto/SmartContract/blob/main/README.md) | Markdown学习资料 | 明确没有执行工程，补充导航与示例权限缺口 |
 | [express](https://github.com/nemo-crypto/express/blob/master/README.md) | Express 4、EJS、MySQL | 补充路由、数据库前提和加载时写入副作用 |
 | [face-recognition-app](https://github.com/nemo-crypto/face-recognition-app/blob/master/README.md) | MUI、H5+、Demo客户端 | 新增根入口并重写Demo说明，区分模拟核验与真实识别 |
 | [flutter-app](https://github.com/nemo-crypto/flutter-app/blob/main/ReadMe.md) | Flutter、Mock/远端Repository | 修正标题、Dart约束、设备命令模板与编译期参数 |
 | [monorepo](https://github.com/nemo-crypto/monorepo/blob/main/README.md) | Lerna 3、Xatom源码包 | 区分实际工作区与教程，逐项补充13个模块接入条件 |
 | [nemo-crypto](https://github.com/nemo-crypto/nemo-crypto/blob/main/README.md) | README、SVG与文档资源 | 保留作者内容，补充双语和资源维护边界 |
-| [next-react](https://github.com/nemo-crypto/next-react/blob/main/README.md) | Next 13 Pages、MobX | 重写真实路由/环境/9000与5000端口，另存学习笔记 |
-| [nuxt-vue3](https://github.com/nemo-crypto/nuxt-vue3/blob/main/README.md) | Nuxt 3、Pinia、Keplr | 补齐9090端口、网络映射缺口和外部索引服务依赖 |
+| [next-react](https://github.com/nemo-crypto/Next.js/blob/main/README.md) | Next 13 Pages、MobX | 重写真实路由/环境/9000与5000端口，另存学习笔记 |
+| [nuxt-vue3](https://github.com/nemo-crypto/Nuxt.js/blob/main/README.md) | Nuxt 3、Pinia、Keplr | 补齐9090端口、网络映射缺口和外部索引服务依赖 |
 | [openlayers](https://github.com/nemo-crypto/openlayers/blob/master/README.md) | 原生页面、OpenLayers | 补充静态预览、资源、坐标与HTTP瓦片说明 |
 | [pump-fun-frontend 17.05.23](https://github.com/m8s-lab/pump-fun-frontend/blob/main/README.md) | Next 14、Wallet Adapter、Anchor | 补齐页面与后端边界，指出Mainnet/Devnet连接不一致 |
 | [qiankun](https://github.com/nemo-crypto/qiankun/blob/main/README.md) | Vue 2基座、React/Vue/HTML子应用 | 重写主说明并补齐5份子模块说明，核实entry和构建路径 |

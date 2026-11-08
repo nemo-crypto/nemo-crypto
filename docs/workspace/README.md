@@ -15,15 +15,15 @@
 | [angular6-material](https://github.com/nemo-crypto/angular6-material/blob/master/README.md) | 管理控制台 | Angular 6、Material、ECharts |
 | [bit-request](https://github.com/nemo-crypto/bit-request/blob/main/README.md) | 请求与React Hook库 | Axios、dumi、father |
 | [bit-utils](https://github.com/nemo-crypto/bit-utils/blob/main/README.md) | JS/TS工具库 | Rollup、TypeDoc、缓存和队列 |
-| [comment-app](https://github.com/nemo-crypto/comment-app/blob/master/README.md) | 静态测评/任务页面 | MUI、jQuery、H5页面 |
-| [common-interview-coding-questions](https://github.com/nemo-crypto/common-interview-coding-questions/blob/main/README.md) | 编程与合约笔记 | Markdown学习资料 |
+| [comment-app](https://github.com/nemo-crypto/uni-app/blob/master/README.md) | 静态测评/任务页面 | MUI、jQuery、H5页面 |
+| [common-interview-coding-questions](https://github.com/nemo-crypto/SmartContract/blob/main/README.md) | 编程与合约笔记 | Markdown学习资料 |
 | [express](https://github.com/nemo-crypto/express/blob/master/README.md) | Web与MySQL示例 | Express 4、EJS、MySQL |
 | [face-recognition-app](https://github.com/nemo-crypto/face-recognition-app/blob/master/README.md) | H5任务与核验界面 | MUI、H5+、Demo客户端 |
 | [flutter-app](https://github.com/nemo-crypto/flutter-app/blob/main/ReadMe.md) | 抽卡与收藏Demo | Flutter、Mock/远端Repository |
 | [monorepo](https://github.com/nemo-crypto/monorepo/blob/main/README.md) | 业务组件与模块集合 | Lerna 3、Xatom源码包 |
 | [nemo-crypto](https://github.com/nemo-crypto/nemo-crypto/blob/main/README.md) | 双语个人介绍 | README、SVG与文档资源 |
-| [next-react](https://github.com/nemo-crypto/next-react/blob/main/README.md) | 多语言业务前端 | Next 13 Pages、MobX |
-| [nuxt-vue3](https://github.com/nemo-crypto/nuxt-vue3/blob/main/README.md) | 链浏览器前端 | Nuxt 3、Pinia、Keplr |
+| [next-react](https://github.com/nemo-crypto/Next.js/blob/main/README.md) | 多语言业务前端 | Next 13 Pages、MobX |
+| [nuxt-vue3](https://github.com/nemo-crypto/Nuxt.js/blob/main/README.md) | 链浏览器前端 | Nuxt 3、Pinia、Keplr |
 | [openlayers](https://github.com/nemo-crypto/openlayers/blob/master/README.md) | 地图标注示例 | 原生页面、OpenLayers |
 | [pump-fun-frontend 17.05.23](https://github.com/m8s-lab/pump-fun-frontend/blob/main/README.md) | Solana代币前端 | Next 14、Wallet Adapter、Anchor |
 | [qiankun](https://github.com/nemo-crypto/qiankun/blob/main/README.md) | 多框架微前端 | Vue 2基座、React/Vue/HTML子应用 |
@@ -51,3 +51,5 @@
 
 
 本页为本地多仓库文档索引的远程副本，跨项目链接按各仓库当前分支生成；不要求读者拥有原本地目录。
+
+[本次本地更新与远程同步结果](GIT-SYNC-REPORT.md)
