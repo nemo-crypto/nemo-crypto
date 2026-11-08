@@ -5,10 +5,16 @@
 </p>
 
 <p align="center">
+  <a href="./README.md" title="Current language: English"><img src="./assets/language-en-active.svg" alt="English — current language" width="116" height="34" /></a>
+  &nbsp;
+  <a href="./README.zh-CN.md" title="切换为简体中文"><img src="./assets/language-zh.svg" alt="简体中文" width="116" height="34" /></a>
+</p>
+
+<p align="center">
   <a href="#about">About</a> ·
   <a href="#build">What I Build</a> ·
   <a href="#stack">Tech Stack</a> ·
-  <a href="#agents">Agents</a> ·
+  <a href="#agents">AI &amp; Automation</a> ·
   <a href="#off-duty">Off Duty</a>
 </p>
 
@@ -23,9 +29,9 @@
 <details open>
 <summary><strong>Meet the developer behind the console</strong></summary>
 
-I build products across web, mobile apps, and mini apps — connecting frontend experiences, backend services, and on-chain data, from interface to infrastructure.
+I build web applications, mobile apps, and mini apps — connecting frontend experiences, backend services, and on-chain data, from interface to infrastructure.
 
-My work spans public-chain applications, prediction markets, and exchange products. Usually with TypeScript, Go, Rust, and enough browser tabs to qualify as a distributed system.
+My work spans public blockchain applications, prediction markets, and exchange products. I usually work with TypeScript, Go, Rust, and enough browser tabs to qualify as a distributed system.
 
 - ☕ **I turn coffee into code** and bugs into features (just kidding, I fix them... most of the time).
 - 🎨 **I make pixels dance and data flow** — from responsive interfaces to APIs and real-time services.
@@ -42,13 +48,13 @@ My work spans public-chain applications, prediction markets, and exchange produc
 <details open>
 <summary><strong>Explore the products, pipelines, and platforms I build</strong></summary>
 
-| Build surface | Under the hood |
+| What I build | How I build it |
 | :--- | :--- |
 | **🌐 Full-Stack Web Applications** | From interface design and frontend interactions to API integration and backend logic. I care about the whole journey — including what happens after someone clicks the button. |
 | **📱 Cross-Platform Apps & Mini Apps** | Flutter and React Native apps for iOS and Android, plus Telegram Mini Apps and WeChat Mini Programs. Connecting mobile interfaces to backend services, adapting navigation and interactions to each platform, and making small screens feel less cramped. “It works on my phone” is where testing begins. |
 | **⛓️ On-Chain Data & Analytics** | Go services for collecting blocks, transactions, and contract events; indexing data; and analyzing wallet activity, token flows, and DEX trades. Historical backfills, duplicate events, and chain reorgs keep things educational. |
 | **📊 Market Data & Trading Systems** | Data pipelines and real-time APIs for prices, trades, candles, order books, and liquidity. Connecting exchange and on-chain feeds to trading screens — with reconnect logic for when the connection has other plans. |
-| **🔮 Web3 & Prediction Markets** | Wallet-connected applications, transaction flows, market discovery, live probabilities, positions, and settlement views. Making complex states understandable, one fewer “pending…” at a time. |
+| **🔮 Web3 & Prediction Markets** | Wallet-connected applications, transaction flows, market discovery, live probability updates, positions, and settlement views. Making complex states understandable, one fewer “pending…” at a time. |
 
 </details>
 
@@ -84,7 +90,7 @@ Different platforms, different lifecycles. My coffee routine remains compatible 
 
 - **Go** — concurrent services, on-chain data pipelines, event indexing, market data aggregation, and WebSocket APIs.
 - **Rust** — performance-sensitive components and blockchain tooling. The compiler asks tough questions before production does.
-- **Node.js / TypeScript** — API services, backend-for-frontend layers, and integrations that connect the product.
+- **Node.js / TypeScript** — API services, backend-for-frontend (BFF) layers, and integrations that connect different parts of the product.
 
 **Data & Integration — keeping everything in sync**
 
@@ -125,7 +131,7 @@ The goal: fewer copy-paste rituals, more time for problems worth solving.
 <summary><strong>Cats, questionable aim, and production wisdom.</strong></summary>
 
 - 🐱 **My cat is named `const`** — consistently hungry, surprisingly mutable.
-- 🎮 **I’m a gamer** — my debugging skills transfer better than my aim.
+- 🎮 **I’m a gamer** — better at tracking down bugs than tracking moving targets.
 - 🍕 **Pizza is my favorite dependency** — updates usually arrive with extra cheese.
 - 🧩 **I enjoy puzzles** — Rubik’s Cubes come with fewer logs than distributed systems.
 
@@ -145,4 +151,4 @@ await watchWhatActuallyHappens();
 
 ---
 
-<p align="center"><samp>Pixels polished. APIs connected. Coffee replenished.</samp></p>
+<p align="center"><samp>Interfaces polished. APIs connected. Coffee replenished.</samp></p>
