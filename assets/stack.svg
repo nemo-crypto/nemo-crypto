@@ -1,12 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
-<title id="title">Full-stack capability modules</title><desc id="desc">Four neon panels: web interfaces; mobile and mini apps; backend and chain data; agents and automation.</desc>
-<defs><linearGradient id="panel" x2="1" y2="1"><stop stop-color="#0d1729"/><stop offset="1" stop-color="#0b1020"/></linearGradient><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#485b80" opacity=".22"/></pattern></defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="558" viewBox="0 0 1200 558" role="img" aria-labelledby="title desc">
+<title id="title">Nemo’s animated full-stack modules</title>
+<desc id="desc">Four decorative looping visualizations: a web rendering scanner, mobile signal pulses, streaming chain data packets, and an agent workflow. These are illustrations, not live metrics.</desc>
+<defs>
+  <linearGradient id="panel" x2="1" y2="1"><stop stop-color="#0e1a2e"/><stop offset="1" stop-color="#090e1d"/></linearGradient>
+  <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#526b96" opacity=".24"/></pattern>
+  <linearGradient id="scan"><stop stop-color="#42f8d0" stop-opacity="0"/><stop offset="1" stop-color="#42f8d0" stop-opacity=".35"/></linearGradient>
+  <clipPath id="web-clip"><rect x="26" y="177" width="538" height="46" rx="5"/></clipPath>
+</defs>
+<style>
+  .edge{stroke-dasharray:12 88;animation:edge 12s linear infinite;animation-delay:var(--offset)}
+  .scanner{animation:scan 5s ease-in-out infinite}
+  .signal{transform-box:fill-box;transform-origin:center;animation:signal 3.6s ease-out infinite;animation-delay:var(--offset)}
+  .packets{stroke-dasharray:5 22;animation:packets 4s linear infinite}
+  .node{animation:node 4.8s ease-in-out infinite;animation-delay:var(--offset)}
+  .meter{transform-box:fill-box;transform-origin:center bottom;animation:meter 3s ease-in-out infinite;animation-delay:var(--offset)}
+  @keyframes edge{to{stroke-dashoffset:-100}}
+  @keyframes scan{0%,100%{transform:translateX(0);opacity:0}10%,85%{opacity:1}90%,100%{transform:translateX(540px)}}
+  @keyframes signal{0%{transform:scale(.5);opacity:0}20%{opacity:.8}100%{transform:scale(1.5);opacity:0}}
+  @keyframes packets{to{stroke-dashoffset:-108}}
+  @keyframes node{0%,100%{opacity:.4}25%,45%{opacity:1}}
+  @keyframes meter{0%,100%{transform:scaleY(.35);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+  @media(prefers-reduced-motion:reduce){.edge,.scanner,.signal,.packets,.node,.meter{animation:none}.scanner,.signal{display:none}}
+</style>
 <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
-<g transform="translate(1 1)">
-<rect width="590" height="236" rx="16" fill="url(#panel)" stroke="#2b3854"/>
-<rect width="590" height="236" rx="16" fill="url(#dots)"/>
-<path d="M20 1H90" stroke="#42f8d0" stroke-width="2"/>
-<text x="534" y="71" fill="#42f8d0" opacity=".12" font-size="66" text-anchor="middle" font-weight="800">01</text>
+<g transform="translate(1 1)" style="--offset:-0.0s">
+<rect width="590" height="270" rx="16" fill="url(#panel)" stroke="#2b3854"/>
+<rect width="590" height="270" rx="16" fill="url(#dots)"/>
+<rect class="edge" x="1" y="1" width="588" height="268" rx="15" fill="none" stroke="#42f8d0" stroke-width="1.5" pathLength="100" opacity=".7"/>
+<path d="M20 1H100" stroke="#42f8d0" stroke-width="2"/>
+<text x="534" y="71" fill="#42f8d0" opacity=".13" font-size="66" text-anchor="middle" font-weight="800">01</text>
 <text x="24" y="37" fill="#42f8d0" font-size="11" letter-spacing="2">MODULE / 01</text>
 <text x="24" y="68" fill="#edf3ff" font-size="20" font-weight="700">WEB INTERFACES</text>
 <text x="24" y="94" fill="#91a4c1" font-size="13">Pixels with a purpose.</text>
@@ -22,14 +44,21 @@
 <text x="415.0" y="140" text-anchor="middle" fill="#42f8d0" font-size="13">Nuxt</text>
 <rect x="456" y="119" width="86" height="32" rx="5" fill="#142036" stroke="#30405c"/>
 <text x="499.0" y="140" text-anchor="middle" fill="#42f8d0" font-size="13">Angular</text>
-<path d="M24 210H566" stroke="#26344d"/>
-<circle cx="28" cy="223" r="2" fill="#42f8d0"/><text x="39" y="226" fill="#647b9b" font-size="9" letter-spacing="1.5">PART OF THE SAME STACK</text>
+<g stroke="#42f8d0" fill="none">
+<rect x="25" y="170" width="540" height="60" rx="6" stroke-opacity=".25"/><path d="M25 183H565" stroke-opacity=".2"/>
+<g fill="#42f8d0" stroke="none"><circle cx="34" cy="177" r="1.5"/><circle cx="41" cy="177" r="1.5"/><circle cx="48" cy="177" r="1.5"/></g>
+<rect x="36" y="193" width="90" height="26" rx="3" stroke-opacity=".35"/><path d="M142 195H340M142 205H260M142 215H310" stroke-opacity=".4"/>
+<g clip-path="url(#web-clip)"><rect class="scanner" x="-40" y="177" width="80" height="46" fill="url(#scan)" stroke="none"/><path class="scanner" d="M40 184V224" stroke-opacity=".9"/></g>
 </g>
-<g transform="translate(609 1)">
-<rect width="590" height="236" rx="16" fill="url(#panel)" stroke="#2b3854"/>
-<rect width="590" height="236" rx="16" fill="url(#dots)"/>
-<path d="M20 1H90" stroke="#75baff" stroke-width="2"/>
-<text x="534" y="71" fill="#75baff" opacity=".12" font-size="66" text-anchor="middle" font-weight="800">02</text>
+<path d="M24 245H566" stroke="#26344d"/>
+<circle class="node" cx="28" cy="258" r="2" fill="#42f8d0"/><text x="39" y="261" fill="#7791b3" font-size="9" letter-spacing="1.5">RENDER / INTERACT / SHIP</text>
+</g>
+<g transform="translate(609 1)" style="--offset:-1.3s">
+<rect width="590" height="270" rx="16" fill="url(#panel)" stroke="#2b3854"/>
+<rect width="590" height="270" rx="16" fill="url(#dots)"/>
+<rect class="edge" x="1" y="1" width="588" height="268" rx="15" fill="none" stroke="#75baff" stroke-width="1.5" pathLength="100" opacity=".7"/>
+<path d="M20 1H100" stroke="#75baff" stroke-width="2"/>
+<text x="534" y="71" fill="#75baff" opacity=".13" font-size="66" text-anchor="middle" font-weight="800">02</text>
 <text x="24" y="37" fill="#75baff" font-size="11" letter-spacing="2">MODULE / 02</text>
 <text x="24" y="68" fill="#edf3ff" font-size="20" font-weight="700">MOBILE + MINI APPS</text>
 <text x="24" y="94" fill="#91a4c1" font-size="13">Small screens. Full-stack thinking.</text>
@@ -43,14 +72,33 @@
 <text x="375.0" y="140" text-anchor="middle" fill="#75baff" font-size="13">Telegram</text>
 <rect x="432" y="119" width="78" height="32" rx="5" fill="#142036" stroke="#30405c"/>
 <text x="471.0" y="140" text-anchor="middle" fill="#75baff" font-size="13">WeChat</text>
-<path d="M24 210H566" stroke="#26344d"/>
-<circle cx="28" cy="223" r="2" fill="#75baff"/><text x="39" y="226" fill="#647b9b" font-size="9" letter-spacing="1.5">PART OF THE SAME STACK</text>
+<g stroke="#75baff" fill="none">
+<rect x="36" y="166" width="35" height="67" rx="7" stroke-opacity=".65"/><path d="M45 173H62M48 226H59" stroke-opacity=".5"/>
+<circle cx="125" cy="200" r="19" stroke-opacity=".2"/><circle class="signal" cx="125" cy="200" r="20" style="--offset:0s"/><circle class="signal" cx="125" cy="200" r="20" style="--offset:-1.8s"/>
+<path class="packets" d="M72 200H180" stroke-width="2"/>
+<text x="192" y="196" fill="#8ba6c9" stroke="none" font-size="11">iOS / ANDROID</text><text x="192" y="215" fill="#617c9f" stroke="none" font-size="10">TG / WECHAT</text>
+<rect class="meter" x="385" y="187" width="5" height="27" rx="2" fill="#75baff" stroke="none" style="--offset:-0.0s"/>
+<rect class="meter" x="399" y="182" width="5" height="32" rx="2" fill="#75baff" stroke="none" style="--offset:-0.25s"/>
+<rect class="meter" x="413" y="177" width="5" height="37" rx="2" fill="#75baff" stroke="none" style="--offset:-0.5s"/>
+<rect class="meter" x="427" y="172" width="5" height="42" rx="2" fill="#75baff" stroke="none" style="--offset:-0.75s"/>
+<rect class="meter" x="441" y="187" width="5" height="27" rx="2" fill="#75baff" stroke="none" style="--offset:-1.0s"/>
+<rect class="meter" x="455" y="182" width="5" height="32" rx="2" fill="#75baff" stroke="none" style="--offset:-1.25s"/>
+<rect class="meter" x="469" y="177" width="5" height="37" rx="2" fill="#75baff" stroke="none" style="--offset:-1.5s"/>
+<rect class="meter" x="483" y="172" width="5" height="42" rx="2" fill="#75baff" stroke="none" style="--offset:-1.75s"/>
+<rect class="meter" x="497" y="187" width="5" height="27" rx="2" fill="#75baff" stroke="none" style="--offset:-2.0s"/>
+<rect class="meter" x="511" y="182" width="5" height="32" rx="2" fill="#75baff" stroke="none" style="--offset:-2.25s"/>
+<rect class="meter" x="525" y="177" width="5" height="37" rx="2" fill="#75baff" stroke="none" style="--offset:-2.5s"/>
+<rect class="meter" x="539" y="172" width="5" height="42" rx="2" fill="#75baff" stroke="none" style="--offset:-2.75s"/>
 </g>
-<g transform="translate(1 253)">
-<rect width="590" height="236" rx="16" fill="url(#panel)" stroke="#2b3854"/>
-<rect width="590" height="236" rx="16" fill="url(#dots)"/>
-<path d="M20 1H90" stroke="#b99aff" stroke-width="2"/>
-<text x="534" y="71" fill="#b99aff" opacity=".12" font-size="66" text-anchor="middle" font-weight="800">03</text>
+<path d="M24 245H566" stroke="#26344d"/>
+<circle class="node" cx="28" cy="258" r="2" fill="#75baff"/><text x="39" y="261" fill="#7791b3" font-size="9" letter-spacing="1.5">ONE PRODUCT / MULTIPLE SCREENS</text>
+</g>
+<g transform="translate(1 287)" style="--offset:-2.6s">
+<rect width="590" height="270" rx="16" fill="url(#panel)" stroke="#2b3854"/>
+<rect width="590" height="270" rx="16" fill="url(#dots)"/>
+<rect class="edge" x="1" y="1" width="588" height="268" rx="15" fill="none" stroke="#b99aff" stroke-width="1.5" pathLength="100" opacity=".7"/>
+<path d="M20 1H100" stroke="#b99aff" stroke-width="2"/>
+<text x="534" y="71" fill="#b99aff" opacity=".13" font-size="66" text-anchor="middle" font-weight="800">03</text>
 <text x="24" y="37" fill="#b99aff" font-size="11" letter-spacing="2">MODULE / 03</text>
 <text x="24" y="68" fill="#edf3ff" font-size="20" font-weight="700">BACKEND + CHAIN DATA</text>
 <text x="24" y="94" fill="#91a4c1" font-size="13">The services behind the screen.</text>
@@ -64,14 +112,30 @@
 <text x="303.0" y="140" text-anchor="middle" fill="#b99aff" font-size="13">WebSockets</text>
 <rect x="368" y="119" width="54" height="32" rx="5" fill="#142036" stroke="#30405c"/>
 <text x="395.0" y="140" text-anchor="middle" fill="#b99aff" font-size="13">RPC</text>
-<path d="M24 210H566" stroke="#26344d"/>
-<circle cx="28" cy="223" r="2" fill="#b99aff"/><text x="39" y="226" fill="#647b9b" font-size="9" letter-spacing="1.5">PART OF THE SAME STACK</text>
+<g stroke="#b99aff" fill="none">
+<path d="M57 199H532" stroke-opacity=".15"/><path class="packets" d="M57 199H532" stroke-width="2"/>
+<rect x="29" y="181" width="56" height="36" rx="6" fill="#121a30" stroke-opacity=".6"/>
+<circle class="node" cx="57" cy="177" r="3" fill="#b99aff" stroke="none" style="--offset:-0.0s"/>
+<text x="57" y="203" fill="#b99aff" stroke="none" font-size="10" text-anchor="middle">RPC</text>
+<rect x="181" y="181" width="56" height="36" rx="6" fill="#121a30" stroke-opacity=".6"/>
+<circle class="node" cx="209" cy="177" r="3" fill="#b99aff" stroke="none" style="--offset:-1.2s"/>
+<text x="209" y="203" fill="#b99aff" stroke="none" font-size="10" text-anchor="middle">INDEX</text>
+<rect x="339" y="181" width="56" height="36" rx="6" fill="#121a30" stroke-opacity=".6"/>
+<circle class="node" cx="367" cy="177" r="3" fill="#b99aff" stroke="none" style="--offset:-2.4s"/>
+<text x="367" y="203" fill="#b99aff" stroke="none" font-size="10" text-anchor="middle">API</text>
+<rect x="504" y="181" width="56" height="36" rx="6" fill="#121a30" stroke-opacity=".6"/>
+<circle class="node" cx="532" cy="177" r="3" fill="#b99aff" stroke="none" style="--offset:-3.5999999999999996s"/>
+<text x="532" y="203" fill="#b99aff" stroke="none" font-size="10" text-anchor="middle">UI</text>
 </g>
-<g transform="translate(609 253)">
-<rect width="590" height="236" rx="16" fill="url(#panel)" stroke="#2b3854"/>
-<rect width="590" height="236" rx="16" fill="url(#dots)"/>
-<path d="M20 1H90" stroke="#f48ec2" stroke-width="2"/>
-<text x="534" y="71" fill="#f48ec2" opacity=".12" font-size="66" text-anchor="middle" font-weight="800">04</text>
+<path d="M24 245H566" stroke="#26344d"/>
+<circle class="node" cx="28" cy="258" r="2" fill="#b99aff"/><text x="39" y="261" fill="#7791b3" font-size="9" letter-spacing="1.5">INGEST / INDEX / STREAM</text>
+</g>
+<g transform="translate(609 287)" style="--offset:-3.9000000000000004s">
+<rect width="590" height="270" rx="16" fill="url(#panel)" stroke="#2b3854"/>
+<rect width="590" height="270" rx="16" fill="url(#dots)"/>
+<rect class="edge" x="1" y="1" width="588" height="268" rx="15" fill="none" stroke="#f48ec2" stroke-width="1.5" pathLength="100" opacity=".7"/>
+<path d="M20 1H100" stroke="#f48ec2" stroke-width="2"/>
+<text x="534" y="71" fill="#f48ec2" opacity=".13" font-size="66" text-anchor="middle" font-weight="800">04</text>
 <text x="24" y="37" fill="#f48ec2" font-size="11" letter-spacing="2">MODULE / 04</text>
 <text x="24" y="68" fill="#edf3ff" font-size="20" font-weight="700">AGENTS + AUTOMATION</text>
 <text x="24" y="94" fill="#91a4c1" font-size="13">Fewer tabs. Better workflows.</text>
@@ -83,7 +147,22 @@
 <text x="287.0" y="140" text-anchor="middle" fill="#f48ec2" font-size="13">Mastra</text>
 <rect x="336" y="119" width="54" height="32" rx="5" fill="#142036" stroke="#30405c"/>
 <text x="363.0" y="140" text-anchor="middle" fill="#f48ec2" font-size="13">n8n</text>
-<path d="M24 210H566" stroke="#26344d"/>
-<circle cx="28" cy="223" r="2" fill="#f48ec2"/><text x="39" y="226" fill="#647b9b" font-size="9" letter-spacing="1.5">PART OF THE SAME STACK</text>
+<g stroke="#f48ec2" fill="none">
+<path d="M56 198H176L280 175L386 198H532M176 198L280 221L386 198" stroke-opacity=".3"/><path class="packets" d="M56 198H176L280 175L386 198H532M176 198L280 221L386 198" stroke-width="1.5"/>
+<g class="node" style="--offset:-0.0s"><circle cx="56" cy="198" r="13" fill="#21162e"/><circle cx="56" cy="198" r="3" fill="#f48ec2" stroke="none"/></g>
+<text x="56" y="202" fill="#f6bddb" stroke="none" font-size="7" text-anchor="middle">IN</text>
+<g class="node" style="--offset:-0.8s"><circle cx="176" cy="198" r="13" fill="#21162e"/><circle cx="176" cy="198" r="3" fill="#f48ec2" stroke="none"/></g>
+<text x="176" y="202" fill="#f6bddb" stroke="none" font-size="7" text-anchor="middle">PLAN</text>
+<g class="node" style="--offset:-1.6s"><circle cx="280" cy="175" r="13" fill="#21162e"/><circle cx="280" cy="175" r="3" fill="#f48ec2" stroke="none"/></g>
+<text x="280" y="179" fill="#f6bddb" stroke="none" font-size="7" text-anchor="middle">TOOL</text>
+<g class="node" style="--offset:-2.4000000000000004s"><circle cx="280" cy="221" r="13" fill="#21162e"/><circle cx="280" cy="221" r="3" fill="#f48ec2" stroke="none"/></g>
+<text x="280" y="225" fill="#f6bddb" stroke="none" font-size="7" text-anchor="middle">CHECK</text>
+<g class="node" style="--offset:-3.2s"><circle cx="386" cy="198" r="13" fill="#21162e"/><circle cx="386" cy="198" r="3" fill="#f48ec2" stroke="none"/></g>
+<text x="386" y="202" fill="#f6bddb" stroke="none" font-size="7" text-anchor="middle">REVIEW</text>
+<g class="node" style="--offset:-4.0s"><circle cx="532" cy="198" r="13" fill="#21162e"/><circle cx="532" cy="198" r="3" fill="#f48ec2" stroke="none"/></g>
+<text x="532" y="202" fill="#f6bddb" stroke="none" font-size="7" text-anchor="middle">OUT</text>
+</g>
+<path d="M24 245H566" stroke="#26344d"/>
+<circle class="node" cx="28" cy="258" r="2" fill="#f48ec2"/><text x="39" y="261" fill="#7791b3" font-size="9" letter-spacing="1.5">PLAN / EXECUTE / REVIEW</text>
 </g>
 </g></svg>

@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="./assets/hero.svg" alt="Hi, I'm Nemo — Full-Stack Developer, Web3 Builder, and Professional Debugger. From pixels to pipelines, wallets to workflows." width="100%" />
+  <picture>
+    <img src="./assets/hero.svg" alt="Hi, I'm Nemo — Full-Stack Developer, Web3 Builder, and Professional Debugger. From pixels to pipelines, wallets to workflows." width="100%" />
+  </picture>
 </p>
 
 <p align="center">
@@ -14,11 +16,14 @@
   <strong>Full-Stack Developer · Web3 Builder · Professional Debugger 🐛</strong>
 </p>
 
+## 👋 About Me
+
+<details>
+<summary><strong>Meet the developer behind the console · click to expand</strong></summary>
+
 I build products across web, mobile apps, and mini apps — connecting frontend experiences, backend services, and on-chain data, from interface to infrastructure.
 
 My work spans public-chain applications, prediction markets, and exchange products. Usually with TypeScript, Go, Rust, and enough browser tabs to qualify as a distributed system.
-
-## 👋 About Me
 
 - ☕ **I turn coffee into code** and bugs into features (just kidding, I fix them... most of the time).
 - 🎨 **I make pixels dance and data flow** — from responsive interfaces to APIs and real-time services.
@@ -26,7 +31,12 @@ My work spans public-chain applications, prediction markets, and exchange produc
 - 🧠 **I have a love-hate relationship with JavaScript frameworks** — React is my best frenemy. Next.js made it a group chat.
 - 🕵️‍♂️ **I debug like a detective** — following clues across browser consoles, backend logs, and blockchain explorers.
 
+</details>
+
 ## 🚀 What I Build
+
+<details>
+<summary><strong>Explore the products, pipelines, and platforms I build</strong></summary>
 
 | Build surface | Under the hood |
 | :--- | :--- |
@@ -36,9 +46,16 @@ My work spans public-chain applications, prediction markets, and exchange produc
 | **📊 Market Data & Trading Systems** | Data pipelines and real-time APIs for prices, trades, candles, order books, and liquidity. Connecting exchange and on-chain feeds to trading screens — with reconnect logic for when the connection has other plans. |
 | **🔮 Web3 & Prediction Markets** | Wallet-connected applications, transaction flows, market discovery, live probabilities, positions, and settlement views. Making complex states understandable, one fewer “pending…” at a time. |
 
+</details>
+
 ## 🧰 My Stack
 
-![Four capability modules: web interfaces, mobile and mini apps, backend and chain data, agents and automation](./assets/stack.svg)
+<picture>
+  <img src="./assets/stack.svg" alt="Animated capability modules: web interface scanning, mobile signal pulses, backend data streaming, and agent workflow orchestration." width="100%" />
+</picture>
+
+<details>
+<summary><strong>Inspect the stack · frameworks, services, and platform details</strong></summary>
 
 **Frontend — where people meet the product**
 
@@ -73,7 +90,12 @@ Data normalization · Historical backfills · Deduplication · Reconnect recover
 
 Git · VS Code · Figma — and a little inspiration from Dribbble.
 
+</details>
+
 ## 🤖 AI Agents & Automation
+
+<details>
+<summary><strong>Explore my agent and automation experiments</strong></summary>
 
 Exploring ways to turn repetitive work into useful, inspectable workflows.
 
@@ -84,6 +106,8 @@ Exploring ways to turn repetitive work into useful, inspectable workflows.
 Areas I’m exploring include on-chain research, market summaries, event alerts, and engineering automation.
 
 The goal: fewer copy-paste rituals, more time for problems worth solving.
+
+</details>
 
 ## 🎮 Beyond the Terminal
 

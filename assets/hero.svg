@@ -17,7 +17,9 @@
   .flow{stroke-dasharray:6 16;animation:flow 12s linear infinite}
   .cursor{animation:blink 1.8s steps(2,end) infinite}
   .firework{pointer-events:none}
-  .spark{opacity:0;animation:spark 7.2s cubic-bezier(.15,.6,.35,1) infinite;animation-delay:var(--delay)}
+  .core-glow{animation:core-glow 5s ease-in-out infinite}
+  @keyframes core-glow{0%,100%{opacity:.15}50%{opacity:.5}}
+  .spark,.spark-trail{opacity:0;animation:spark 7.2s cubic-bezier(.15,.6,.35,1) infinite;animation-delay:var(--delay)}
   .burst-ring{opacity:0;animation:burst-ring 7.2s ease-out infinite;animation-delay:var(--delay)}
   .rocket{opacity:0;animation:launch 7.2s ease-out infinite;animation-delay:var(--delay)}
   @keyframes launch{0%{opacity:0;transform:translateY(110px)}3%{opacity:.85}12%{opacity:.95;transform:translateY(0)}15%,100%{opacity:0;transform:translateY(0)}}
@@ -27,7 +29,7 @@
   @keyframes pulse{50%{opacity:.45}}
   @keyframes flow{to{stroke-dashoffset:-220}}
   @keyframes blink{50%{opacity:0}}
-  @media(prefers-reduced-motion:reduce){.orbit,.pulse,.flow,.cursor,.spark,.burst-ring,.rocket{animation:none}.firework{display:none}}
+  @media(prefers-reduced-motion:reduce){.orbit,.pulse,.flow,.cursor,.spark,.burst-ring,.rocket,.spark-trail,.core-glow{animation:none}.firework{display:none}}
 </style>
 <g clip-path="url(#frame)">
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -41,67 +43,121 @@
 <path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
 <circle class="burst-ring" r="62.9" fill="none" stroke-width="1"/>
 <circle class="spark" r="2" stroke="none" style="--dx:74.0px;--dy:17.0px"/>
+<path class="spark-trail" d="M-4.5 -0.0L4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:74.0px;--dy:17.0px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:47.3px;--dy:34.2px"/>
+<path class="spark-trail" d="M-4.2 -1.5L4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:47.3px;--dy:34.2px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:56.7px;--dy:64.6px"/>
+<path class="spark-trail" d="M-3.4 -2.9L3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:56.7px;--dy:64.6px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:25.2px;--dy:60.6px"/>
+<path class="spark-trail" d="M-2.3 -3.9L2.3 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:25.2px;--dy:60.6px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:12.8px;--dy:89.9px"/>
+<path class="spark-trail" d="M-0.8 -4.4L0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:12.8px;--dy:89.9px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-8.7px;--dy:66.6px"/>
+<path class="spark-trail" d="M0.8 -4.4L-0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-8.7px;--dy:66.6px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-37.0px;--dy:81.1px"/>
+<path class="spark-trail" d="M2.2 -3.9L-2.2 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-37.0px;--dy:81.1px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-38.5px;--dy:49.3px"/>
+<path class="spark-trail" d="M3.4 -2.9L-3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-38.5px;--dy:49.3px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-69.5px;--dy:42.3px"/>
+<path class="spark-trail" d="M4.2 -1.5L-4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-69.5px;--dy:42.3px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-50.3px;--dy:17.0px"/>
+<path class="spark-trail" d="M4.5 -0.0L-4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-50.3px;--dy:17.0px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-69.5px;--dy:-8.3px"/>
+<path class="spark-trail" d="M4.2 1.5L-4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-69.5px;--dy:-8.3px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-38.5px;--dy:-15.3px"/>
+<path class="spark-trail" d="M3.4 2.9L-3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-38.5px;--dy:-15.3px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-37.0px;--dy:-47.1px"/>
+<path class="spark-trail" d="M2.3 3.9L-2.3 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-37.0px;--dy:-47.1px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-8.7px;--dy:-32.6px"/>
+<path class="spark-trail" d="M0.8 4.4L-0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-8.7px;--dy:-32.6px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:12.8px;--dy:-55.9px"/>
+<path class="spark-trail" d="M-0.8 4.4L0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:12.8px;--dy:-55.9px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:25.2px;--dy:-26.6px"/>
+<path class="spark-trail" d="M-2.2 3.9L2.2 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:25.2px;--dy:-26.6px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:56.7px;--dy:-30.6px"/>
+<path class="spark-trail" d="M-3.4 2.9L3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:56.7px;--dy:-30.6px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:47.3px;--dy:-0.2px"/>
+<path class="spark-trail" d="M-4.2 1.5L4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:47.3px;--dy:-0.2px"/>
 </g>
 <g transform="translate(1090 137)" style="--delay:-3.8s" fill="#c38aff" stroke="#c38aff">
 <path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
 <circle class="burst-ring" r="56.1" fill="none" stroke-width="1"/>
 <circle class="spark" r="2" stroke="none" style="--dx:66.0px;--dy:17.0px"/>
+<path class="spark-trail" d="M-4.5 -0.0L4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:66.0px;--dy:17.0px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:42.2px;--dy:32.3px"/>
+<path class="spark-trail" d="M-4.2 -1.5L4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:42.2px;--dy:32.3px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:50.6px;--dy:59.4px"/>
+<path class="spark-trail" d="M-3.4 -2.9L3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:50.6px;--dy:59.4px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:22.4px;--dy:55.9px"/>
+<path class="spark-trail" d="M-2.3 -3.9L2.3 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:22.4px;--dy:55.9px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:11.5px;--dy:82.0px"/>
+<path class="spark-trail" d="M-0.8 -4.4L0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:11.5px;--dy:82.0px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-7.8px;--dy:61.2px"/>
+<path class="spark-trail" d="M0.8 -4.4L-0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-7.8px;--dy:61.2px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-33.0px;--dy:74.2px"/>
+<path class="spark-trail" d="M2.2 -3.9L-2.2 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-33.0px;--dy:74.2px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-34.4px;--dy:45.8px"/>
+<path class="spark-trail" d="M3.4 -2.9L-3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-34.4px;--dy:45.8px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-62.0px;--dy:39.6px"/>
+<path class="spark-trail" d="M4.2 -1.5L-4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-62.0px;--dy:39.6px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-44.9px;--dy:17.0px"/>
+<path class="spark-trail" d="M4.5 -0.0L-4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-44.9px;--dy:17.0px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-62.0px;--dy:-5.6px"/>
+<path class="spark-trail" d="M4.2 1.5L-4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-62.0px;--dy:-5.6px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-34.4px;--dy:-11.8px"/>
+<path class="spark-trail" d="M3.4 2.9L-3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-34.4px;--dy:-11.8px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-33.0px;--dy:-40.2px"/>
+<path class="spark-trail" d="M2.3 3.9L-2.3 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-33.0px;--dy:-40.2px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-7.8px;--dy:-27.2px"/>
+<path class="spark-trail" d="M0.8 4.4L-0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-7.8px;--dy:-27.2px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:11.5px;--dy:-48.0px"/>
+<path class="spark-trail" d="M-0.8 4.4L0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:11.5px;--dy:-48.0px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:22.4px;--dy:-21.9px"/>
+<path class="spark-trail" d="M-2.2 3.9L2.2 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:22.4px;--dy:-21.9px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:50.6px;--dy:-25.4px"/>
+<path class="spark-trail" d="M-3.4 2.9L3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:50.6px;--dy:-25.4px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:42.2px;--dy:1.7px"/>
+<path class="spark-trail" d="M-4.2 1.5L4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:42.2px;--dy:1.7px"/>
 </g>
 <g transform="translate(742 377)" style="--delay:-6.2s" fill="#ffd487" stroke="#ffd487">
 <path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
 <circle class="burst-ring" r="49.3" fill="none" stroke-width="1"/>
 <circle class="spark" r="2" stroke="none" style="--dx:58.0px;--dy:17.0px"/>
+<path class="spark-trail" d="M-4.5 -0.0L4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:58.0px;--dy:17.0px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:37.1px;--dy:30.5px"/>
+<path class="spark-trail" d="M-4.2 -1.5L4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:37.1px;--dy:30.5px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:44.4px;--dy:54.3px"/>
+<path class="spark-trail" d="M-3.4 -2.9L3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:44.4px;--dy:54.3px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:19.7px;--dy:51.2px"/>
+<path class="spark-trail" d="M-2.3 -3.9L2.3 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:19.7px;--dy:51.2px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:10.1px;--dy:74.1px"/>
+<path class="spark-trail" d="M-0.8 -4.4L0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:10.1px;--dy:74.1px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-6.8px;--dy:55.8px"/>
+<path class="spark-trail" d="M0.8 -4.4L-0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-6.8px;--dy:55.8px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-29.0px;--dy:67.2px"/>
+<path class="spark-trail" d="M2.2 -3.9L-2.2 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-29.0px;--dy:67.2px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-30.2px;--dy:42.4px"/>
+<path class="spark-trail" d="M3.4 -2.9L-3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-30.2px;--dy:42.4px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-54.5px;--dy:36.8px"/>
+<path class="spark-trail" d="M4.2 -1.5L-4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-54.5px;--dy:36.8px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-39.4px;--dy:17.0px"/>
+<path class="spark-trail" d="M4.5 -0.0L-4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-39.4px;--dy:17.0px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-54.5px;--dy:-2.8px"/>
+<path class="spark-trail" d="M4.2 1.5L-4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-54.5px;--dy:-2.8px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-30.2px;--dy:-8.4px"/>
+<path class="spark-trail" d="M3.4 2.9L-3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-30.2px;--dy:-8.4px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:-29.0px;--dy:-33.2px"/>
+<path class="spark-trail" d="M2.3 3.9L-2.3 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-29.0px;--dy:-33.2px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:-6.8px;--dy:-21.8px"/>
+<path class="spark-trail" d="M0.8 4.4L-0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-6.8px;--dy:-21.8px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:10.1px;--dy:-40.1px"/>
+<path class="spark-trail" d="M-0.8 4.4L0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:10.1px;--dy:-40.1px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:19.7px;--dy:-17.2px"/>
+<path class="spark-trail" d="M-2.2 3.9L2.2 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:19.7px;--dy:-17.2px"/>
 <circle class="spark" r="2" stroke="none" style="--dx:44.4px;--dy:-20.3px"/>
+<path class="spark-trail" d="M-3.4 2.9L3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:44.4px;--dy:-20.3px"/>
 <circle class="spark" r="1.4" stroke="none" style="--dx:37.1px;--dy:3.5px"/>
+<path class="spark-trail" d="M-4.2 1.5L4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:37.1px;--dy:3.5px"/>
 </g>
 </g>
 <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
@@ -128,6 +184,7 @@
 <g class="orbit" fill="none"><circle cx="958" cy="253" r="153" stroke="#42f8d0" stroke-width="2" stroke-dasharray="65 897"/><circle cx="1111" cy="253" r="4" fill="#42f8d0" filter="url(#glow)"/></g>
 <g class="orbit reverse" fill="none"><circle cx="958" cy="253" r="171" stroke="#b482ff" stroke-opacity=".7" stroke-dasharray="30 1044"/><circle cx="787" cy="253" r="3" fill="#b482ff"/></g>
 <path class="flow" d="M770 253H892M1024 253H1146M958 82V188M958 318V425" stroke="#68cce4" stroke-opacity=".55" fill="none"/>
+<path class="core-glow" d="M958 186L1016 220V286L958 320L900 286V220Z" fill="none" stroke="#8fbaff" stroke-width="9" filter="url(#glow)"/>
 <path d="M958 186L1016 220V286L958 320L900 286V220Z" fill="url(#core)" stroke="url(#neon)" stroke-width="2"/>
 <path d="M958 198L1005 226V280L958 308L911 280V226Z" fill="none" stroke="#304266"/>
 <text x="958" y="266" text-anchor="middle" fill="#effbff" font-size="39" font-weight="700">&lt;/&gt;</text>
