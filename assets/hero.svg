@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
 <title id="title">Nemo — Full Stack. On Chain. Beyond the Browser.</title>
-<desc id="desc">An animated cyber console with neon orbital paths, connected stack nodes, looping neon fireworks, and a decorative market waveform. Full-stack development, mobile apps, blockchain data, and agent automation.</desc>
+<desc id="desc">An animated cyber console with neon orbital paths, connected stack nodes, layered chrysanthemum fireworks with comet launches and falling embers, and a decorative market waveform. Full-stack development, mobile apps, blockchain data, and agent automation.</desc>
 <defs>
   <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#060b16"/><stop offset=".6" stop-color="#0c1027"/><stop offset="1" stop-color="#140c29"/></linearGradient>
   <linearGradient id="neon"><stop stop-color="#42f8d0"/><stop offset=".5" stop-color="#63b3ff"/><stop offset="1" stop-color="#d27bff"/></linearGradient>
@@ -8,6 +8,9 @@
   <radialGradient id="core"><stop stop-color="#1f3149"/><stop offset="1" stop-color="#0a1326"/></radialGradient>
   <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#8498cb" stroke-opacity=".065"/></pattern>
   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="fw-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.4" result="halo"/><feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <radialGradient id="fw-flash"><stop stop-color="#fffdf0" stop-opacity=".9"/><stop offset=".18" stop-color="#a9cfff" stop-opacity=".5"/><stop offset="1" stop-color="#a9cfff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="fw-launch" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff8dd"/><stop offset=".25" stop-color="#ffd487" stop-opacity=".9"/><stop offset="1" stop-color="#ffd487" stop-opacity="0"/></linearGradient>
   <clipPath id="frame"><rect x="1" y="1" width="1198" height="518" rx="24"/></clipPath>
 </defs>
 <style>
@@ -19,17 +22,24 @@
   .firework{pointer-events:none}
   .core-glow{animation:core-glow 5s ease-in-out infinite}
   @keyframes core-glow{0%,100%{opacity:.15}50%{opacity:.5}}
-  .spark,.spark-trail{opacity:0;animation:spark 7.2s cubic-bezier(.15,.6,.35,1) infinite;animation-delay:var(--delay)}
-  .burst-ring{opacity:0;animation:burst-ring 7.2s ease-out infinite;animation-delay:var(--delay)}
-  .rocket{opacity:0;animation:launch 7.2s ease-out infinite;animation-delay:var(--delay)}
-  @keyframes launch{0%{opacity:0;transform:translateY(110px)}3%{opacity:.85}12%{opacity:.95;transform:translateY(0)}15%,100%{opacity:0;transform:translateY(0)}}
-  @keyframes spark{0%,12%{opacity:0;transform:translate(0,0) scale(.5)}15%{opacity:1;transform:translate(0,0) scale(1.2)}34%{opacity:.9}48%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}}
-  @keyframes burst-ring{0%,13%{opacity:0;transform:scale(.05)}16%{opacity:.65}38%,100%{opacity:0;transform:scale(1)}}
+  /* 三组错峰烟花：升空、双层爆破、重力下坠、余烬消散。 */
+  .fw-launch{opacity:0;animation:fw-launch 9s cubic-bezier(.2,.7,.3,1) infinite;animation-delay:var(--delay)}
+  .fw-flash{opacity:0;animation:fw-flash 9s ease-out infinite;animation-delay:var(--delay)}
+  .fw-wave{opacity:0;animation:fw-wave 9s ease-out infinite;animation-delay:var(--delay)}
+  .fw-particle{opacity:0;animation:fw-flight 9s linear infinite;animation-delay:var(--delay)}
+  .fw-inner{animation-name:fw-inner}
+  .fw-ray{opacity:0;stroke-dasharray:14 86;animation:fw-ray 9s ease-out infinite;animation-delay:var(--delay)}
+  @keyframes fw-launch{0%{opacity:0;transform:translate(-18px,190px)}3%{opacity:.8}12%{opacity:1;transform:translate(0,0)}14%,100%{opacity:0;transform:translate(0,0)}}
+  @keyframes fw-flash{0%,12%{opacity:0;transform:scale(.1)}14%{opacity:.75;transform:scale(.7)}21%,100%{opacity:0;transform:scale(1.7)}}
+  @keyframes fw-wave{0%,13%{opacity:0;transform:scale(.1)}16%{opacity:.3}33%,100%{opacity:0;transform:scale(1.3)}}
+  @keyframes fw-flight{0%,13%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:1;transform:translate(var(--sx),var(--sy)) scale(1.2)}24%{opacity:1;transform:translate(var(--mx),var(--my)) scale(1)}37%{opacity:.85;transform:translate(var(--dx),var(--dy)) scale(.8)}52%{opacity:.35;transform:translate(var(--fx),var(--fy)) scale(.6)}63%,100%{opacity:0;transform:translate(var(--fx),var(--fy)) scale(.2)}}
+  @keyframes fw-inner{0%,16%{opacity:0;transform:translate(0,0) scale(.5)}19%{opacity:1;transform:translate(var(--sx),var(--sy)) scale(1.2)}28%{opacity:1;transform:translate(var(--mx),var(--my)) scale(1)}41%{opacity:.7;transform:translate(var(--dx),var(--dy)) scale(.8)}56%{opacity:.25;transform:translate(var(--fx),var(--fy)) scale(.4)}66%,100%{opacity:0;transform:translate(var(--fx),var(--fy)) scale(.2)}}
+  @keyframes fw-ray{0%,13%{opacity:0;stroke-dashoffset:100}16%{opacity:.85}36%{opacity:.6}51%,100%{opacity:0;stroke-dashoffset:-20}}
   @keyframes spin{to{transform:rotate(360deg)}}
   @keyframes pulse{50%{opacity:.45}}
   @keyframes flow{to{stroke-dashoffset:-220}}
   @keyframes blink{50%{opacity:0}}
-  @media(prefers-reduced-motion:reduce){.orbit,.pulse,.flow,.cursor,.spark,.burst-ring,.rocket,.spark-trail,.core-glow{animation:none}.firework{display:none}}
+  @media(prefers-reduced-motion:reduce){.orbit,.pulse,.flow,.cursor,.core-glow,.fw-launch,.fw-flash,.fw-wave,.fw-particle,.fw-ray{animation:none}.firework{display:none}}
 </style>
 <g clip-path="url(#frame)">
 <rect width="1200" height="520" fill="url(#bg)"/>
@@ -37,127 +47,526 @@
 <ellipse cx="960" cy="250" rx="340" ry="310" fill="url(#aura)"/>
 <path d="M0 435L1200 305M0 460L1200 330M0 485L1200 355M0 510L1200 380" stroke="#6374b8" stroke-opacity=".065"/>
 <path d="M24 1H1176" stroke="url(#neon)" stroke-width="3"/>
-<!-- Looping decorative fireworks, behind text and interface elements. -->
+<!-- 烟花置于文字与轨道下层，保留前景可读性。 -->
 <g class="firework" aria-hidden="true">
-<g transform="translate(690 151)" style="--delay:-1.4s" fill="#42f8d0" stroke="#42f8d0">
-<path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
-<circle class="burst-ring" r="62.9" fill="none" stroke-width="1"/>
-<circle class="spark" r="2" stroke="none" style="--dx:74.0px;--dy:17.0px"/>
-<path class="spark-trail" d="M-4.5 -0.0L4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:74.0px;--dy:17.0px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:47.3px;--dy:34.2px"/>
-<path class="spark-trail" d="M-4.2 -1.5L4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:47.3px;--dy:34.2px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:56.7px;--dy:64.6px"/>
-<path class="spark-trail" d="M-3.4 -2.9L3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:56.7px;--dy:64.6px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:25.2px;--dy:60.6px"/>
-<path class="spark-trail" d="M-2.3 -3.9L2.3 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:25.2px;--dy:60.6px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:12.8px;--dy:89.9px"/>
-<path class="spark-trail" d="M-0.8 -4.4L0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:12.8px;--dy:89.9px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-8.7px;--dy:66.6px"/>
-<path class="spark-trail" d="M0.8 -4.4L-0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-8.7px;--dy:66.6px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-37.0px;--dy:81.1px"/>
-<path class="spark-trail" d="M2.2 -3.9L-2.2 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-37.0px;--dy:81.1px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-38.5px;--dy:49.3px"/>
-<path class="spark-trail" d="M3.4 -2.9L-3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-38.5px;--dy:49.3px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-69.5px;--dy:42.3px"/>
-<path class="spark-trail" d="M4.2 -1.5L-4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-69.5px;--dy:42.3px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-50.3px;--dy:17.0px"/>
-<path class="spark-trail" d="M4.5 -0.0L-4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-50.3px;--dy:17.0px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-69.5px;--dy:-8.3px"/>
-<path class="spark-trail" d="M4.2 1.5L-4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-69.5px;--dy:-8.3px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-38.5px;--dy:-15.3px"/>
-<path class="spark-trail" d="M3.4 2.9L-3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-38.5px;--dy:-15.3px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-37.0px;--dy:-47.1px"/>
-<path class="spark-trail" d="M2.3 3.9L-2.3 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-37.0px;--dy:-47.1px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-8.7px;--dy:-32.6px"/>
-<path class="spark-trail" d="M0.8 4.4L-0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-8.7px;--dy:-32.6px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:12.8px;--dy:-55.9px"/>
-<path class="spark-trail" d="M-0.8 4.4L0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:12.8px;--dy:-55.9px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:25.2px;--dy:-26.6px"/>
-<path class="spark-trail" d="M-2.2 3.9L2.2 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:25.2px;--dy:-26.6px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:56.7px;--dy:-30.6px"/>
-<path class="spark-trail" d="M-3.4 2.9L3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:56.7px;--dy:-30.6px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:47.3px;--dy:-0.2px"/>
-<path class="spark-trail" d="M-4.2 1.5L4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:47.3px;--dy:-0.2px"/>
+<g transform="translate(690 146)" style="--delay:-0.8s">
+<g class="fw-launch"><path d="M0 -5Q-2 23 -10 76" fill="none" stroke="url(#fw-launch)" stroke-width="3" stroke-linecap="round"/><circle r="2.4" fill="#fff9d9" filter="url(#fw-glow)"/></g>
+<circle class="fw-flash" r="62" fill="url(#fw-flash)"/>
+<circle class="fw-wave" r="108" fill="none" stroke="#48ffe0" stroke-width=".8"/>
+<path class="fw-ray" d="M0 0Q61.8 -6.0 95.0 30.0" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q61.2 10.4 94.1 55.2" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q57.9 27.4 89.0 81.4" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q49.3 43.3 75.8 105.8" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q34.9 54.5 53.8 123.1" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q17.4 58.9 26.8 129.9" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q0.0 57.7 0.0 127.9" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-16.0 53.7 -24.6 121.8" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-31.5 48.6 -48.5 113.9" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-46.9 40.9 -72.2 102.2" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-60.2 28.7 -92.6 83.4" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-67.6 12.1 -104.1 57.9" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-67.6 -6.0 -104.0 30.0" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-61.8 -22.6 -95.1 4.5" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-53.6 -36.9 -82.4 -17.6" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-44.3 -50.3 -68.2 -38.2" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-33.0 -63.1 -50.7 -57.9" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-17.9 -72.9 -27.6 -72.9" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-0.0 -76.1 -0.0 -77.9" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q17.6 -71.7 27.1 -71.1" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q32.2 -61.8 49.5 -55.8" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q43.8 -49.8 67.4 -37.4" pathLength="100" fill="none" stroke="#a1cfff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q54.1 -37.2 83.2 -18.1" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q63.3 -23.0 97.4 3.9" pathLength="100" fill="none" stroke="#48ffe0" stroke-width="1.5" stroke-linecap="round"/>
+<g class="fw-particle" style="--sx:9.5px;--sy:0.0px;--mx:70.3px;--my:3.0px;--dx:95.0px;--dy:24.0px;--fx:102.6px;--fy:80.0px">
+<path d="M-7.0 2.0L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
 </g>
-<g transform="translate(1090 137)" style="--delay:-3.8s" fill="#c38aff" stroke="#c38aff">
-<path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
-<circle class="burst-ring" r="56.1" fill="none" stroke-width="1"/>
-<circle class="spark" r="2" stroke="none" style="--dx:66.0px;--dy:17.0px"/>
-<path class="spark-trail" d="M-4.5 -0.0L4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:66.0px;--dy:17.0px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:42.2px;--dy:32.3px"/>
-<path class="spark-trail" d="M-4.2 -1.5L4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:42.2px;--dy:32.3px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:50.6px;--dy:59.4px"/>
-<path class="spark-trail" d="M-3.4 -2.9L3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:50.6px;--dy:59.4px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:22.4px;--dy:55.9px"/>
-<path class="spark-trail" d="M-2.3 -3.9L2.3 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:22.4px;--dy:55.9px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:11.5px;--dy:82.0px"/>
-<path class="spark-trail" d="M-0.8 -4.4L0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:11.5px;--dy:82.0px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-7.8px;--dy:61.2px"/>
-<path class="spark-trail" d="M0.8 -4.4L-0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-7.8px;--dy:61.2px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-33.0px;--dy:74.2px"/>
-<path class="spark-trail" d="M2.2 -3.9L-2.2 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-33.0px;--dy:74.2px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-34.4px;--dy:45.8px"/>
-<path class="spark-trail" d="M3.4 -2.9L-3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-34.4px;--dy:45.8px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-62.0px;--dy:39.6px"/>
-<path class="spark-trail" d="M4.2 -1.5L-4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-62.0px;--dy:39.6px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-44.9px;--dy:17.0px"/>
-<path class="spark-trail" d="M4.5 -0.0L-4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-44.9px;--dy:17.0px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-62.0px;--dy:-5.6px"/>
-<path class="spark-trail" d="M4.2 1.5L-4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-62.0px;--dy:-5.6px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-34.4px;--dy:-11.8px"/>
-<path class="spark-trail" d="M3.4 2.9L-3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-34.4px;--dy:-11.8px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-33.0px;--dy:-40.2px"/>
-<path class="spark-trail" d="M2.3 3.9L-2.3 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-33.0px;--dy:-40.2px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-7.8px;--dy:-27.2px"/>
-<path class="spark-trail" d="M0.8 4.4L-0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-7.8px;--dy:-27.2px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:11.5px;--dy:-48.0px"/>
-<path class="spark-trail" d="M-0.8 4.4L0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:11.5px;--dy:-48.0px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:22.4px;--dy:-21.9px"/>
-<path class="spark-trail" d="M-2.2 3.9L2.2 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:22.4px;--dy:-21.9px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:50.6px;--dy:-25.4px"/>
-<path class="spark-trail" d="M-3.4 2.9L3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:50.6px;--dy:-25.4px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:42.2px;--dy:1.7px"/>
-<path class="spark-trail" d="M-4.2 1.5L4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:42.2px;--dy:1.7px"/>
+<g class="fw-particle" style="--sx:9.4px;--sy:2.5px;--mx:69.6px;--my:21.7px;--dx:94.1px;--dy:49.2px;--fx:101.6px;--fy:105.2px">
+<path d="M-6.8 0.2L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
 </g>
-<g transform="translate(742 377)" style="--delay:-6.2s" fill="#ffd487" stroke="#ffd487">
-<path class="rocket" d="M0 0V23" fill="none" stroke-width="1.7" stroke-linecap="round"/>
-<circle class="burst-ring" r="49.3" fill="none" stroke-width="1"/>
-<circle class="spark" r="2" stroke="none" style="--dx:58.0px;--dy:17.0px"/>
-<path class="spark-trail" d="M-4.5 -0.0L4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:58.0px;--dy:17.0px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:37.1px;--dy:30.5px"/>
-<path class="spark-trail" d="M-4.2 -1.5L4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:37.1px;--dy:30.5px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:44.4px;--dy:54.3px"/>
-<path class="spark-trail" d="M-3.4 -2.9L3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:44.4px;--dy:54.3px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:19.7px;--dy:51.2px"/>
-<path class="spark-trail" d="M-2.3 -3.9L2.3 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:19.7px;--dy:51.2px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:10.1px;--dy:74.1px"/>
-<path class="spark-trail" d="M-0.8 -4.4L0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:10.1px;--dy:74.1px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-6.8px;--dy:55.8px"/>
-<path class="spark-trail" d="M0.8 -4.4L-0.8 4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-6.8px;--dy:55.8px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-29.0px;--dy:67.2px"/>
-<path class="spark-trail" d="M2.2 -3.9L-2.2 3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-29.0px;--dy:67.2px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-30.2px;--dy:42.4px"/>
-<path class="spark-trail" d="M3.4 -2.9L-3.4 2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-30.2px;--dy:42.4px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-54.5px;--dy:36.8px"/>
-<path class="spark-trail" d="M4.2 -1.5L-4.2 1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-54.5px;--dy:36.8px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-39.4px;--dy:17.0px"/>
-<path class="spark-trail" d="M4.5 -0.0L-4.5 0.0" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-39.4px;--dy:17.0px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-54.5px;--dy:-2.8px"/>
-<path class="spark-trail" d="M4.2 1.5L-4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-54.5px;--dy:-2.8px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-30.2px;--dy:-8.4px"/>
-<path class="spark-trail" d="M3.4 2.9L-3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-30.2px;--dy:-8.4px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:-29.0px;--dy:-33.2px"/>
-<path class="spark-trail" d="M2.3 3.9L-2.3 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-29.0px;--dy:-33.2px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:-6.8px;--dy:-21.8px"/>
-<path class="spark-trail" d="M0.8 4.4L-0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:-6.8px;--dy:-21.8px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:10.1px;--dy:-40.1px"/>
-<path class="spark-trail" d="M-0.8 4.4L0.8 -4.4" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:10.1px;--dy:-40.1px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:19.7px;--dy:-17.2px"/>
-<path class="spark-trail" d="M-2.2 3.9L2.2 -3.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:19.7px;--dy:-17.2px"/>
-<circle class="spark" r="2" stroke="none" style="--dx:44.4px;--dy:-20.3px"/>
-<path class="spark-trail" d="M-3.4 2.9L3.4 -2.9" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:44.4px;--dy:-20.3px"/>
-<circle class="spark" r="1.4" stroke="none" style="--dx:37.1px;--dy:3.5px"/>
-<path class="spark-trail" d="M-4.2 1.5L4.2 -1.5" fill="none" stroke-width="1.3" stroke-linecap="round" style="--dx:37.1px;--dy:3.5px"/>
+<g class="fw-particle" style="--sx:8.9px;--sy:5.1px;--mx:65.9px;--my:41.0px;--dx:89.0px;--dy:75.4px;--fx:96.1px;--fy:131.4px">
+<path d="M-6.1 -1.5L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:7.6px;--sy:7.6px;--mx:56.1px;--my:59.1px;--dx:75.8px;--dy:99.8px;--fx:81.9px;--fy:155.8px">
+<path d="M-4.9 -2.9L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:5.4px;--sy:9.3px;--mx:39.8px;--my:71.9px;--dx:53.8px;--dy:117.1px;--fx:58.1px;--fy:173.1px">
+<path d="M-3.5 -4.1L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:2.7px;--sy:10.0px;--mx:19.8px;--my:76.9px;--dx:26.8px;--dy:123.9px;--fx:28.9px;--fy:179.9px">
+<path d="M-1.8 -4.8L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:0.0px;--sy:9.8px;--mx:0.0px;--my:75.5px;--dx:0.0px;--dy:121.9px;--fx:0.0px;--fy:177.9px">
+<path d="M-0.0 -5.0L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-2.5px;--sy:9.2px;--mx:-18.2px;--my:71.0px;--dx:-24.6px;--dy:115.8px;--fx:-26.6px;--fy:171.8px">
+<path d="M1.8 -4.8L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-4.8px;--sy:8.4px;--mx:-35.9px;--my:65.1px;--dx:-48.5px;--dy:107.9px;--fx:-52.3px;--fy:163.9px">
+<path d="M3.5 -4.1L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-7.2px;--sy:7.2px;--mx:-53.4px;--my:56.4px;--dx:-72.2px;--dy:96.2px;--fx:-78.0px;--fy:152.2px">
+<path d="M4.9 -2.9L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-9.3px;--sy:5.3px;--mx:-68.5px;--my:42.6px;--dx:-92.6px;--dy:77.4px;--fx:-100.0px;--fy:133.4px">
+<path d="M6.1 -1.5L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-10.4px;--sy:2.8px;--mx:-77.0px;--my:23.6px;--dx:-104.1px;--dy:51.9px;--fx:-112.4px;--fy:107.9px">
+<path d="M6.8 0.2L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-10.4px;--sy:0.0px;--mx:-77.0px;--my:3.0px;--dx:-104.0px;--dy:24.0px;--fx:-112.3px;--fy:80.0px">
+<path d="M7.0 2.0L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-9.5px;--sy:-2.5px;--mx:-70.4px;--my:-15.9px;--dx:-95.1px;--dy:-1.5px;--fx:-102.7px;--fy:54.5px">
+<path d="M6.8 3.8L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-8.2px;--sy:-4.8px;--mx:-61.0px;--my:-32.2px;--dx:-82.4px;--dy:-23.6px;--fx:-89.0px;--fy:32.4px">
+<path d="M6.1 5.5L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-6.8px;--sy:-6.8px;--mx:-50.5px;--my:-47.5px;--dx:-68.2px;--dy:-44.2px;--fx:-73.7px;--fy:11.8px">
+<path d="M4.9 6.9L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-5.1px;--sy:-8.8px;--mx:-37.5px;--my:-62.0px;--dx:-50.7px;--dy:-63.9px;--fx:-54.8px;--fy:-7.9px">
+<path d="M3.5 8.1L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-2.8px;--sy:-10.3px;--mx:-20.4px;--my:-73.1px;--dx:-27.6px;--dy:-78.9px;--fx:-29.8px;--fy:-22.9px">
+<path d="M1.8 8.8L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-0.0px;--sy:-10.8px;--mx:-0.0px;--my:-76.8px;--dx:-0.0px;--dy:-83.9px;--fx:-0.0px;--fy:-27.9px">
+<path d="M0.0 9.0L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:2.7px;--sy:-10.1px;--mx:20.0px;--my:-71.8px;--dx:27.1px;--dy:-77.1px;--fx:29.2px;--fy:-21.1px">
+<path d="M-1.8 8.8L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:5.0px;--sy:-8.6px;--mx:36.7px;--my:-60.5px;--dx:49.5px;--dy:-61.8px;--fx:53.5px;--fy:-5.8px">
+<path d="M-3.5 8.1L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:6.7px;--sy:-6.7px;--mx:49.9px;--my:-46.9px;--dx:67.4px;--dy:-43.4px;--fx:72.8px;--fy:12.6px">
+<path d="M-4.9 6.9L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:8.3px;--sy:-4.8px;--mx:61.6px;--my:-32.6px;--dx:83.2px;--dy:-24.1px;--fx:89.9px;--fy:31.9px">
+<path d="M-6.1 5.5L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:9.7px;--sy:-2.6px;--mx:72.1px;--my:-16.3px;--dx:97.4px;--dy:-2.1px;--fx:105.2px;--fy:53.9px">
+<path d="M-6.8 3.8L0 0" stroke="#48ffe0" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#48ffe0" opacity=".14"/><circle r="1.65" fill="#48ffe0"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:5.5px;--sy:1.3px;--mx:40.3px;--my:12.7px;--dx:54.5px;--dy:37.1px;--fx:58.9px;--fy:93.1px">
+<path d="M-6.8 0.4L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:4.2px;--sy:4.0px;--mx:30.8px;--my:32.3px;--dx:41.7px;--dy:63.6px;--fx:45.0px;--fy:119.6px">
+<path d="M-5.1 -2.8L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:1.7px;--sy:5.8px;--mx:12.7px;--my:46.0px;--dx:17.2px;--dy:82.1px;--fx:18.6px;--fy:138.1px">
+<path d="M-2.0 -4.7L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-1.5px;--sy:6.2px;--mx:-10.9px;--my:48.5px;--dx:-14.8px;--dy:85.5px;--fx:-16.0px;--fy:141.5px">
+<path d="M1.6 -4.8L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-4.4px;--sy:4.6px;--mx:-32.3px;--my:37.0px;--dx:-43.7px;--dy:70.0px;--fx:-47.2px;--fy:126.0px">
+<path d="M4.8 -3.1L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-5.9px;--sy:1.7px;--mx:-43.3px;--my:15.8px;--dx:-58.5px;--dy:41.3px;--fx:-63.2px;--fy:97.3px">
+<path d="M6.7 0.0L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-5.6px;--sy:-1.3px;--mx:-41.6px;--my:-7.0px;--dx:-56.2px;--dy:10.5px;--fx:-60.7px;--fy:66.5px">
+<path d="M6.8 3.6L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-4.1px;--sy:-3.9px;--mx:-30.1px;--my:-25.6px;--dx:-40.7px;--dy:-14.6px;--fx:-43.9px;--fy:41.4px">
+<path d="M5.1 6.8L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-1.6px;--sy:-5.5px;--mx:-12.0px;--my:-37.6px;--dx:-16.2px;--dy:-30.8px;--fx:-17.5px;--fy:25.2px">
+<path d="M2.0 8.7L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:1.4px;--sy:-5.9px;--mx:10.4px;--my:-40.4px;--dx:14.1px;--dy:-34.6px;--fx:15.2px;--fy:21.4px">
+<path d="M-1.6 8.8L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:4.3px;--sy:-4.6px;--mx:32.1px;--my:-30.9px;--dx:43.4px;--dy:-21.7px;--fx:46.9px;--fy:34.3px">
+<path d="M-4.8 7.1L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:6.1px;--sy:-1.8px;--mx:45.1px;--my:-10.4px;--dx:60.9px;--dy:5.9px;--fx:65.8px;--fy:61.9px">
+<path d="M-6.7 4.0L0 0" stroke="#a1cfff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#a1cfff" opacity=".14"/><circle r="1.65" fill="#a1cfff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+</g>
+<g transform="translate(1067 149)" style="--delay:-3.8s">
+<g class="fw-launch"><path d="M0 -5Q-2 23 -10 76" fill="none" stroke="url(#fw-launch)" stroke-width="3" stroke-linecap="round"/><circle r="2.4" fill="#fff9d9" filter="url(#fw-glow)"/></g>
+<circle class="fw-flash" r="62" fill="url(#fw-flash)"/>
+<circle class="fw-wave" r="112" fill="none" stroke="#c194ff" stroke-width=".8"/>
+<path class="fw-ray" d="M0 0Q64.1 -6.0 98.6 30.0" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q63.4 11.0 97.6 56.1" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q60.0 28.6 92.3 83.3" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q51.1 45.1 78.6 108.6" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q36.2 56.8 55.7 126.6" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q18.0 61.3 27.8 133.6" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q0.0 60.0 0.0 131.6" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-16.6 55.9 -25.5 125.2" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-32.7 50.6 -50.3 117.0" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-48.7 42.7 -74.9 104.9" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-62.4 30.0 -96.0 85.4" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-70.1 12.8 -107.9 58.9" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-70.1 -6.0 -107.9 30.0" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-64.1 -23.2 -98.7 3.6" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-55.6 -38.1 -85.5 -19.3" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-46.0 -52.0 -70.8 -40.8" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-34.2 -65.2 -52.6 -61.1" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-18.6 -75.3 -28.6 -76.7" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-0.0 -78.7 -0.0 -81.9" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q18.3 -74.1 28.1 -74.8" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q33.4 -63.8 51.4 -59.0" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q45.4 -51.4 69.9 -39.9" pathLength="100" fill="none" stroke="#ffb4e1" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q56.1 -38.4 86.3 -19.8" pathLength="100" fill="none" stroke="#c194ff" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q65.6 -23.6 101.0 2.9" pathLength="100" fill="none" stroke="#c194ff" stroke-width="1.5" stroke-linecap="round"/>
+<g class="fw-particle" style="--sx:9.9px;--sy:0.0px;--mx:72.9px;--my:3.0px;--dx:98.6px;--dy:24.0px;--fx:106.4px;--fy:80.0px">
+<path d="M-7.0 2.0L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:9.8px;--sy:2.6px;--mx:72.2px;--my:22.3px;--dx:97.6px;--dy:50.1px;--fx:105.4px;--fy:106.1px">
+<path d="M-6.8 0.2L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:9.2px;--sy:5.3px;--mx:68.3px;--my:42.4px;--dx:92.3px;--dy:77.3px;--fx:99.7px;--fy:133.3px">
+<path d="M-6.1 -1.5L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:7.9px;--sy:7.9px;--mx:58.2px;--my:61.2px;--dx:78.6px;--dy:102.6px;--fx:84.9px;--fy:158.6px">
+<path d="M-4.9 -2.9L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:5.6px;--sy:9.7px;--mx:41.3px;--my:74.5px;--dx:55.7px;--dy:120.6px;--fx:60.2px;--fy:176.6px">
+<path d="M-3.5 -4.1L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:2.8px;--sy:10.4px;--mx:20.5px;--my:79.7px;--dx:27.8px;--dy:127.6px;--fx:30.0px;--fy:183.6px">
+<path d="M-1.8 -4.8L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:0.0px;--sy:10.2px;--mx:0.0px;--my:78.2px;--dx:0.0px;--dy:125.6px;--fx:0.0px;--fy:181.6px">
+<path d="M-0.0 -5.0L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-2.6px;--sy:9.5px;--mx:-18.9px;--my:73.5px;--dx:-25.5px;--dy:119.2px;--fx:-27.6px;--fy:175.2px">
+<path d="M1.8 -4.8L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-5.0px;--sy:8.7px;--mx:-37.2px;--my:67.4px;--dx:-50.3px;--dy:111.0px;--fx:-54.3px;--fy:167.0px">
+<path d="M3.5 -4.1L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-7.5px;--sy:7.5px;--mx:-55.4px;--my:58.4px;--dx:-74.9px;--dy:98.9px;--fx:-80.9px;--fy:154.9px">
+<path d="M4.9 -2.9L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-9.6px;--sy:5.5px;--mx:-71.0px;--my:44.0px;--dx:-96.0px;--dy:79.4px;--fx:-103.7px;--fy:135.4px">
+<path d="M6.1 -1.5L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-10.8px;--sy:2.9px;--mx:-79.9px;--my:24.4px;--dx:-107.9px;--dy:52.9px;--fx:-116.5px;--fy:108.9px">
+<path d="M6.8 0.2L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-10.8px;--sy:0.0px;--mx:-79.8px;--my:3.0px;--dx:-107.9px;--dy:24.0px;--fx:-116.5px;--fy:80.0px">
+<path d="M7.0 2.0L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-9.9px;--sy:-2.6px;--mx:-73.0px;--my:-16.6px;--dx:-98.7px;--dy:-2.4px;--fx:-106.6px;--fy:53.6px">
+<path d="M6.8 3.8L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-8.5px;--sy:-4.9px;--mx:-63.3px;--my:-33.5px;--dx:-85.5px;--dy:-25.3px;--fx:-92.3px;--fy:30.7px">
+<path d="M6.1 5.5L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-7.1px;--sy:-7.1px;--mx:-52.4px;--my:-49.4px;--dx:-70.8px;--dy:-46.8px;--fx:-76.4px;--fy:9.2px">
+<path d="M4.9 6.9L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-5.3px;--sy:-9.1px;--mx:-38.9px;--my:-64.4px;--dx:-52.6px;--dy:-67.1px;--fx:-56.8px;--fy:-11.1px">
+<path d="M3.5 8.1L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-2.9px;--sy:-10.7px;--mx:-21.2px;--my:-75.9px;--dx:-28.6px;--dy:-82.7px;--fx:-30.9px;--fy:-26.7px">
+<path d="M1.8 8.8L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-0.0px;--sy:-11.2px;--mx:-0.0px;--my:-79.8px;--dx:-0.0px;--dy:-87.9px;--fx:-0.0px;--fy:-31.9px">
+<path d="M0.0 9.0L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:2.8px;--sy:-10.5px;--mx:20.8px;--my:-74.5px;--dx:28.1px;--dy:-80.8px;--fx:30.3px;--fy:-24.8px">
+<path d="M-1.8 8.8L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:5.1px;--sy:-8.9px;--mx:38.0px;--my:-62.9px;--dx:51.4px;--dy:-65.0px;--fx:55.5px;--fy:-9.0px">
+<path d="M-3.5 8.1L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:7.0px;--sy:-7.0px;--mx:51.7px;--my:-48.7px;--dx:69.9px;--dy:-45.9px;--fx:75.5px;--fy:10.1px">
+<path d="M-4.9 6.9L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:8.6px;--sy:-5.0px;--mx:63.9px;--my:-33.9px;--dx:86.3px;--dy:-25.8px;--fx:93.2px;--fy:30.2px">
+<path d="M-6.1 5.5L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:10.1px;--sy:-2.7px;--mx:74.7px;--my:-17.0px;--dx:101.0px;--dy:-3.1px;--fx:109.1px;--fy:52.9px">
+<path d="M-6.8 3.8L0 0" stroke="#c194ff" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#c194ff" opacity=".14"/><circle r="1.65" fill="#c194ff"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:5.7px;--sy:1.4px;--mx:41.8px;--my:13.0px;--dx:56.5px;--dy:37.6px;--fx:61.1px;--fy:93.6px">
+<path d="M-6.8 0.4L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:4.3px;--sy:4.1px;--mx:32.0px;--my:33.4px;--dx:43.2px;--dy:65.0px;--fx:46.7px;--fy:121.0px">
+<path d="M-5.1 -2.8L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:1.8px;--sy:6.0px;--mx:13.2px;--my:47.6px;--dx:17.9px;--dy:84.3px;--fx:19.3px;--fy:140.3px">
+<path d="M-2.0 -4.7L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-1.5px;--sy:6.4px;--mx:-11.3px;--my:50.2px;--dx:-15.3px;--dy:87.8px;--fx:-16.5px;--fy:143.8px">
+<path d="M1.6 -4.8L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-4.5px;--sy:4.8px;--mx:-33.5px;--my:38.3px;--dx:-45.3px;--dy:71.7px;--fx:-48.9px;--fy:127.7px">
+<path d="M4.8 -3.1L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-6.1px;--sy:1.8px;--mx:-44.9px;--my:16.3px;--dx:-60.7px;--dy:42.0px;--fx:-65.5px;--fy:98.0px">
+<path d="M6.7 0.0L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-5.8px;--sy:-1.4px;--mx:-43.1px;--my:-7.4px;--dx:-58.3px;--dy:10.0px;--fx:-62.9px;--fy:66.0px">
+<path d="M6.8 3.6L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-4.2px;--sy:-4.0px;--mx:-31.2px;--my:-26.6px;--dx:-42.2px;--dy:-16.0px;--fx:-45.6px;--fy:40.0px">
+<path d="M5.1 6.8L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-1.7px;--sy:-5.7px;--mx:-12.5px;--my:-39.1px;--dx:-16.8px;--dy:-32.9px;--fx:-18.2px;--fy:23.1px">
+<path d="M2.0 8.7L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:1.5px;--sy:-6.1px;--mx:10.8px;--my:-42.0px;--dx:14.6px;--dy:-36.8px;--fx:15.8px;--fy:19.2px">
+<path d="M-1.6 8.8L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:4.5px;--sy:-4.7px;--mx:33.3px;--my:-32.1px;--dx:45.0px;--dy:-23.4px;--fx:48.6px;--fy:32.6px">
+<path d="M-4.8 7.1L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:6.3px;--sy:-1.9px;--mx:46.8px;--my:-10.9px;--dx:63.2px;--dy:5.3px;--fx:68.3px;--fy:61.3px">
+<path d="M-6.7 4.0L0 0" stroke="#ffb4e1" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffb4e1" opacity=".14"/><circle r="1.65" fill="#ffb4e1"/><circle r=".7" fill="#fffdf4"/>
+</g>
+</g>
+<g transform="translate(752 351)" style="--delay:-6.8s">
+<g class="fw-launch"><path d="M0 -5Q-2 23 -10 76" fill="none" stroke="url(#fw-launch)" stroke-width="3" stroke-linecap="round"/><circle r="2.4" fill="#fff9d9" filter="url(#fw-glow)"/></g>
+<circle class="fw-flash" r="62" fill="url(#fw-flash)"/>
+<circle class="fw-wave" r="102" fill="none" stroke="#ffd275" stroke-width=".8"/>
+<path class="fw-ray" d="M0 0Q58.3 -6.0 89.8 30.0" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q57.8 9.5 88.9 53.8" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q54.6 25.5 84.1 78.5" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q46.5 40.5 71.6 101.6" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q33.0 51.2 50.8 117.9" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q16.4 55.3 25.3 124.3" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q0.0 54.1 0.0 122.5" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-15.1 50.4 -23.2 116.7" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-29.8 45.5 -45.8 109.3" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-44.3 38.3 -68.2 98.2" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-56.8 26.8 -87.4 80.5" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-63.9 11.1 -98.3 56.3" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-63.9 -6.0 -98.2 30.0" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-58.4 -21.6 -89.9 5.9" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-50.6 -35.2 -77.8 -14.9" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-41.9 -47.9 -64.4 -34.4" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-31.1 -60.0 -47.9 -53.0" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-16.9 -69.2 -26.0 -67.2" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q-0.0 -72.2 -0.0 -71.9" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q16.6 -68.0 25.6 -65.4" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q30.4 -58.7 46.8 -51.0" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q41.4 -47.4 63.7 -33.7" pathLength="100" fill="none" stroke="#ff9d70" stroke-width="1.5" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q51.1 -35.5 78.6 -15.4" pathLength="100" fill="none" stroke="#ffd275" stroke-width="2" stroke-linecap="round"/>
+<path class="fw-ray" d="M0 0Q59.8 -22.0 92.0 5.4" pathLength="100" fill="none" stroke="#ffd275" stroke-width="1.5" stroke-linecap="round"/>
+<g class="fw-particle" style="--sx:9.0px;--sy:0.0px;--mx:66.4px;--my:3.0px;--dx:89.8px;--dy:24.0px;--fx:96.9px;--fy:80.0px">
+<path d="M-7.0 2.0L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:8.9px;--sy:2.4px;--mx:65.8px;--my:20.6px;--dx:88.9px;--dy:47.8px;--fx:96.0px;--fy:103.8px">
+<path d="M-6.8 0.2L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:8.4px;--sy:4.9px;--mx:62.2px;--my:38.9px;--dx:84.1px;--dy:72.5px;--fx:90.8px;--fy:128.5px">
+<path d="M-6.1 -1.5L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:7.2px;--sy:7.2px;--mx:53.0px;--my:56.0px;--dx:71.6px;--dy:95.6px;--fx:77.3px;--fy:151.6px">
+<path d="M-4.9 -2.9L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:5.1px;--sy:8.8px;--mx:37.6px;--my:68.1px;--dx:50.8px;--dy:111.9px;--fx:54.8px;--fy:167.9px">
+<path d="M-3.5 -4.1L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:2.5px;--sy:9.4px;--mx:18.7px;--my:72.8px;--dx:25.3px;--dy:118.3px;--fx:27.3px;--fy:174.3px">
+<path d="M-1.8 -4.8L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:0.0px;--sy:9.2px;--mx:0.0px;--my:71.4px;--dx:0.0px;--dy:116.5px;--fx:0.0px;--fy:172.5px">
+<path d="M-0.0 -5.0L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-2.3px;--sy:8.7px;--mx:-17.2px;--my:67.2px;--dx:-23.2px;--dy:110.7px;--fx:-25.1px;--fy:166.7px">
+<path d="M1.8 -4.8L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-4.6px;--sy:7.9px;--mx:-33.9px;--my:61.7px;--dx:-45.8px;--dy:103.3px;--fx:-49.4px;--fy:159.3px">
+<path d="M3.5 -4.1L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-6.8px;--sy:6.8px;--mx:-50.5px;--my:53.5px;--dx:-68.2px;--dy:92.2px;--fx:-73.7px;--fy:148.2px">
+<path d="M4.9 -2.9L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-8.7px;--sy:5.0px;--mx:-64.7px;--my:40.4px;--dx:-87.4px;--dy:74.5px;--fx:-94.4px;--fy:130.5px">
+<path d="M6.1 -1.5L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-9.8px;--sy:2.6px;--mx:-72.7px;--my:22.5px;--dx:-98.3px;--dy:50.3px;--fx:-106.1px;--fy:106.3px">
+<path d="M6.8 0.2L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-9.8px;--sy:0.0px;--mx:-72.7px;--my:3.0px;--dx:-98.2px;--dy:24.0px;--fx:-106.1px;--fy:80.0px">
+<path d="M7.0 2.0L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-9.0px;--sy:-2.4px;--mx:-66.5px;--my:-14.8px;--dx:-89.9px;--dy:-0.1px;--fx:-97.0px;--fy:55.9px">
+<path d="M6.8 3.8L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-7.8px;--sy:-4.5px;--mx:-57.6px;--my:-30.3px;--dx:-77.8px;--dy:-20.9px;--fx:-84.1px;--fy:35.1px">
+<path d="M6.1 5.5L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-6.4px;--sy:-6.4px;--mx:-47.7px;--my:-44.7px;--dx:-64.4px;--dy:-40.4px;--fx:-69.6px;--fy:15.6px">
+<path d="M4.9 6.9L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-4.8px;--sy:-8.3px;--mx:-35.5px;--my:-58.4px;--dx:-47.9px;--dy:-59.0px;--fx:-51.8px;--fy:-3.0px">
+<path d="M3.5 8.1L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-2.6px;--sy:-9.7px;--mx:-19.3px;--my:-68.9px;--dx:-26.0px;--dy:-73.2px;--fx:-28.1px;--fy:-17.2px">
+<path d="M1.8 8.8L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:-0.0px;--sy:-10.2px;--mx:-0.0px;--my:-72.4px;--dx:-0.0px;--dy:-77.9px;--fx:-0.0px;--fy:-21.9px">
+<path d="M0.0 9.0L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:2.6px;--sy:-9.5px;--mx:18.9px;--my:-67.6px;--dx:25.6px;--dy:-71.4px;--fx:27.6px;--fy:-15.4px">
+<path d="M-1.8 8.8L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:4.7px;--sy:-8.1px;--mx:34.6px;--my:-57.0px;--dx:46.8px;--dy:-57.0px;--fx:50.5px;--fy:-1.0px">
+<path d="M-3.5 8.1L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:6.4px;--sy:-6.4px;--mx:47.1px;--my:-44.1px;--dx:63.7px;--dy:-39.7px;--fx:68.8px;--fy:16.3px">
+<path d="M-4.9 6.9L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:7.9px;--sy:-4.5px;--mx:58.2px;--my:-30.6px;--dx:78.6px;--dy:-21.4px;--fx:84.9px;--fy:34.6px">
+<path d="M-6.1 5.5L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle" style="--sx:9.2px;--sy:-2.5px;--mx:68.1px;--my:-15.2px;--dx:92.0px;--dy:-0.6px;--fx:99.3px;--fy:55.4px">
+<path d="M-6.8 3.8L0 0" stroke="#ffd275" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ffd275" opacity=".14"/><circle r="1.65" fill="#ffd275"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:5.1px;--sy:1.2px;--mx:38.1px;--my:12.1px;--dx:51.5px;--dy:36.4px;--fx:55.6px;--fy:92.4px">
+<path d="M-6.8 0.4L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:3.9px;--sy:3.7px;--mx:29.1px;--my:30.6px;--dx:39.4px;--dy:61.4px;--fx:42.5px;--fy:117.4px">
+<path d="M-5.1 -2.8L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:1.6px;--sy:5.5px;--mx:12.0px;--my:43.6px;--dx:16.3px;--dy:78.9px;--fx:17.6px;--fy:134.9px">
+<path d="M-2.0 -4.7L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-1.4px;--sy:5.8px;--mx:-10.3px;--my:46.0px;--dx:-13.9px;--dy:82.1px;--fx:-15.1px;--fy:138.1px">
+<path d="M1.6 -4.8L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-4.1px;--sy:4.3px;--mx:-30.5px;--my:35.2px;--dx:-41.2px;--dy:67.5px;--fx:-44.5px;--fy:123.5px">
+<path d="M4.8 -3.1L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-5.5px;--sy:1.6px;--mx:-40.9px;--my:15.1px;--dx:-55.3px;--dy:40.4px;--fx:-59.7px;--fy:96.4px">
+<path d="M6.7 0.0L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-5.3px;--sy:-1.3px;--mx:-39.3px;--my:-6.4px;--dx:-53.1px;--dy:11.3px;--fx:-57.3px;--fy:67.3px">
+<path d="M6.8 3.6L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-3.8px;--sy:-3.6px;--mx:-28.4px;--my:-24.0px;--dx:-38.4px;--dy:-12.5px;--fx:-41.5px;--fy:43.5px">
+<path d="M5.1 6.8L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:-1.5px;--sy:-5.2px;--mx:-11.4px;--my:-35.3px;--dx:-15.3px;--dy:-27.8px;--fx:-16.6px;--fy:28.2px">
+<path d="M2.0 8.7L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:1.3px;--sy:-5.5px;--mx:9.8px;--my:-38.0px;--dx:13.3px;--dy:-31.3px;--fx:14.3px;--fy:24.7px">
+<path d="M-1.6 8.8L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:4.1px;--sy:-4.3px;--mx:30.3px;--my:-29.0px;--dx:41.0px;--dy:-19.2px;--fx:44.3px;--fy:36.8px">
+<path d="M-4.8 7.1L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
+<g class="fw-particle fw-inner" style="--sx:5.8px;--sy:-1.7px;--mx:42.6px;--my:-9.6px;--dx:57.6px;--dy:7.0px;--fx:62.2px;--fy:63.0px">
+<path d="M-6.7 4.0L0 0" stroke="#ff9d70" stroke-width="1.7" stroke-linecap="round" opacity=".65"/>
+<circle r="4" fill="#ff9d70" opacity=".14"/><circle r="1.65" fill="#ff9d70"/><circle r=".7" fill="#fffdf4"/>
+</g>
 </g>
 </g>
 <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
