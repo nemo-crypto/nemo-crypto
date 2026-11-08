@@ -5,9 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="./README.md" title="Read in English"><img src="./assets/language-en.svg" alt="English" width="116" height="34" /></a>
-  &nbsp;
-  <a href="./README.zh-CN.md" title="当前语言：简体中文"><img src="./assets/language-zh-active.svg" alt="简体中文 — 当前语言" width="116" height="34" /></a>
+  <a href="https://github.com/nemo-crypto">← 返回个人首页 · Back to profile</a>
 </p>
 
 <p align="center">
