@@ -1,11 +1,16 @@
 <p align="center">
   <picture>
-    <img src="./assets/hero.svg" alt="Hi, I'm Nemo — Full-Stack Developer, Web3 Builder, and Professional Debugger. From pixels to pipelines, wallets to workflows." width="960" />
+    <img src="./assets/hero.svg" alt="Hi, I'm Nemo — Full-Stack Developer, Web3 Builder, and Professional Debugger. From pixels to pipelines, wallets to workflows." width="100%" />
   </picture>
 </p>
 
+<p align="center">
+  <strong>Language / 语言</strong><br />
+  Expand or collapse a language below · 点击语言按钮展开或收起内容
+</p>
+
 <details>
-<summary><img src="./assets/language-zh.svg" alt="简体中文：展开 / 收起" width="96" height="28" /></summary>
+<summary><img src="./assets/language-zh.svg" alt="简体中文" width="116" height="34" />　<strong>点击展开 / 收起中文</strong></summary>
 
 <p align="center">
   <a href="#zh-about">关于我</a> ·
@@ -15,10 +20,16 @@
   <a href="#zh-off-duty">终端之外</a>
 </p>
 
+<p align="center">
+  <strong>全栈开发者 · Web3 构建者 · 专业 Debugger 🐛</strong>
+</p>
+
 <a name="zh-about"></a>
 
+## 👋 关于我
+
 <details open>
-<summary><strong>👋 关于我</strong></summary>
+<summary><strong>认识一下控制台背后的开发者</strong></summary>
 
 我开发 Web 应用、移动 App 和小程序，将前端体验、后端服务与链上数据连接起来，工作范围从界面延伸到基础设施。
 
@@ -34,8 +45,10 @@
 
 <a name="zh-build"></a>
 
-<details>
-<summary><strong>🚀 我在构建什么</strong></summary>
+## 🚀 我在构建什么
+
+<details open>
+<summary><strong>产品、数据管道与平台</strong></summary>
 
 | 我在构建什么 | 如何实现 |
 | :--- | :--- |
@@ -49,14 +62,14 @@
 
 <a name="zh-stack"></a>
 
-<details>
-<summary><strong>🧰 技术栈</strong></summary>
+## 🧰 技术栈
 
-<p align="center">
 <picture>
-  <img src="./assets/stack.svg" alt="动态能力模块：Web 界面扫描、移动端信号脉冲、后端数据流和 Agent 工作流编排。" width="760" />
+  <img src="./assets/stack.svg" alt="动态能力模块：Web 界面扫描、移动端信号脉冲、后端数据流和 Agent 工作流编排。" width="100%" />
 </picture>
-</p>
+
+<details open>
+<summary><strong>框架、服务与平台实践</strong></summary>
 
 **前端：用户与产品相遇的地方**
 
@@ -95,8 +108,10 @@ Git · VS Code · Figma，以及偶尔从 Dribbble 找到的一点灵感。
 
 <a name="zh-agents"></a>
 
-<details>
-<summary><strong>🤖 AI Agent 与自动化</strong></summary>
+## 🤖 AI Agent 与自动化
+
+<details open>
+<summary><strong>Agent 与自动化实践探索</strong></summary>
 
 探索如何把重复工作变成有用、可检查的工作流。
 
@@ -112,8 +127,10 @@ Git · VS Code · Figma，以及偶尔从 Dribbble 找到的一点灵感。
 
 <a name="zh-off-duty"></a>
 
-<details>
-<summary><strong>🎮 终端之外</strong></summary>
+## 🎮 终端之外
+
+<details open>
+<summary><strong>猫、随缘枪法，以及生产环境教会我的事</strong></summary>
 
 - 🐱 **我的猫叫 `const`**：饿得一如既往，行为却出奇多变。
 - 🎮 **喜欢打游戏**：追踪 Bug 比瞄准移动目标更在行。
@@ -134,12 +151,14 @@ await watchWhatActuallyHappens();
 
 </details>
 
+---
+
 <p align="center"><samp>界面打磨好了，API 接上了，咖啡也续上了。</samp></p>
 
 </details>
 
 <details open>
-<summary><img src="./assets/language-en.svg" alt="English: expand / collapse" width="96" height="28" /></summary>
+<summary><img src="./assets/language-en.svg" alt="English" width="116" height="34" />　<strong>Expand / collapse English</strong></summary>
 
 <p align="center">
   <a href="#en-about">About</a> ·
@@ -149,10 +168,16 @@ await watchWhatActuallyHappens();
   <a href="#en-off-duty">Off Duty</a>
 </p>
 
+<p align="center">
+  <strong>Full-Stack Developer · Web3 Builder · Professional Debugger 🐛</strong>
+</p>
+
 <a name="en-about"></a>
 
+## 👋 About Me
+
 <details open>
-<summary><strong>👋 About Me</strong></summary>
+<summary><strong>Meet the developer behind the console</strong></summary>
 
 I build web applications, mobile apps, and mini apps — connecting frontend experiences, backend services, and on-chain data, from interface to infrastructure.
 
@@ -168,8 +193,10 @@ My work spans public blockchain applications, prediction markets, and exchange p
 
 <a name="en-build"></a>
 
-<details>
-<summary><strong>🚀 What I Build</strong></summary>
+## 🚀 What I Build
+
+<details open>
+<summary><strong>Explore the products, pipelines, and platforms I build</strong></summary>
 
 | What I build | How I build it |
 | :--- | :--- |
@@ -183,14 +210,14 @@ My work spans public blockchain applications, prediction markets, and exchange p
 
 <a name="en-stack"></a>
 
-<details>
-<summary><strong>🧰 My Stack</strong></summary>
+## 🧰 My Stack
 
-<p align="center">
 <picture>
-  <img src="./assets/stack.svg" alt="Animated capability modules: web interface scanning, mobile signal pulses, backend data streaming, and agent workflow orchestration." width="760" />
+  <img src="./assets/stack.svg" alt="Animated capability modules: web interface scanning, mobile signal pulses, backend data streaming, and agent workflow orchestration." width="100%" />
 </picture>
-</p>
+
+<details open>
+<summary><strong>Inspect the stack · frameworks, services, and platform details</strong></summary>
 
 **Frontend — where people meet the product**
 
@@ -229,8 +256,10 @@ Git · VS Code · Figma — and a little inspiration from Dribbble.
 
 <a name="en-agents"></a>
 
-<details>
-<summary><strong>🤖 AI Agents & Automation</strong></summary>
+## 🤖 AI Agents & Automation
+
+<details open>
+<summary><strong>Explore my agent and automation experiments</strong></summary>
 
 Exploring ways to turn repetitive work into useful, inspectable workflows.
 
@@ -246,8 +275,10 @@ The goal: fewer copy-paste rituals, more time for problems worth solving.
 
 <a name="en-off-duty"></a>
 
-<details>
-<summary><strong>🎮 Beyond the Terminal</strong></summary>
+## 🎮 Beyond the Terminal
+
+<details open>
+<summary><strong>Cats, questionable aim, and production wisdom.</strong></summary>
 
 - 🐱 **My cat is named `const`** — consistently hungry, surprisingly mutable.
 - 🎮 **I’m a gamer** — better at tracking down bugs than tracking moving targets.
@@ -267,6 +298,8 @@ await watchWhatActuallyHappens();
 ```
 
 </details>
+
+---
 
 <p align="center"><samp>Interfaces polished. APIs connected. Coffee replenished.</samp></p>
 
