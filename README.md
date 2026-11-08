@@ -146,3 +146,13 @@ await watchWhatActuallyHappens();
 ---
 
 <p align="center"><samp>Interfaces polished. APIs connected. Coffee replenished.</samp></p>
+
+<!-- BEGIN chovy-readme-review -->
+## Repository maintenance
+
+This repository is a profile and documentation collection, not an application package. The bilingual profile is maintained in README.md and [README.zh-CN.md](README.zh-CN.md); artwork lives in assets and supporting material in docs.
+
+There is no package manifest or application start/build/test command at the root. When editing, keep both language versions, in-page anchors, images and project references consistent. External demos and badges were not verified during this local README review. Existing career and project descriptions are preserved as author-maintained content.
+<!-- END chovy-readme-review -->
+
+[Workspace project index and README review](docs/workspace/README.md)

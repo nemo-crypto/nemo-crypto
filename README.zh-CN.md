@@ -150,3 +150,13 @@ await watchWhatActuallyHappens();
 ---
 
 <p align="center"><samp>界面打磨好了，API 接上了，咖啡也续上了。</samp></p>
+
+<!-- BEGIN chovy-readme-review -->
+## 仓库维护与内容范围
+
+此目录用于个人介绍与技术文档展示，不是可启动应用。英文入口为[README.md](README.md)，中文版为本文，视觉资源在assets，补充材料在docs。根目录没有package.json，不需要安装依赖或执行启动命令。
+
+修改时同步核对双语内容、页面锚点、图片路径与项目链接。当前介绍中的经历和能力由作者维护，本轮保留正文，不据此声称对应项目均完成了部署或性能验证；外部徽章和演示未联网核实。
+<!-- END chovy-readme-review -->
+
+[工作区项目索引与README检查记录](docs/workspace/README.md)
