@@ -18,8 +18,8 @@
 
 ## 👋 About Me
 
-<details>
-<summary><strong>Meet the developer behind the console · click to expand</strong></summary>
+<details open>
+<summary><strong>Meet the developer behind the console</strong></summary>
 
 I build products across web, mobile apps, and mini apps — connecting frontend experiences, backend services, and on-chain data, from interface to infrastructure.
 
@@ -35,7 +35,7 @@ My work spans public-chain applications, prediction markets, and exchange produc
 
 ## 🚀 What I Build
 
-<details>
+<details open>
 <summary><strong>Explore the products, pipelines, and platforms I build</strong></summary>
 
 | Build surface | Under the hood |
@@ -54,7 +54,7 @@ My work spans public-chain applications, prediction markets, and exchange produc
   <img src="./assets/stack.svg" alt="Animated capability modules: web interface scanning, mobile signal pulses, backend data streaming, and agent workflow orchestration." width="100%" />
 </picture>
 
-<details>
+<details open>
 <summary><strong>Inspect the stack · frameworks, services, and platform details</strong></summary>
 
 **Frontend — where people meet the product**
@@ -94,7 +94,7 @@ Git · VS Code · Figma — and a little inspiration from Dribbble.
 
 ## 🤖 AI Agents & Automation
 
-<details>
+<details open>
 <summary><strong>Explore my agent and automation experiments</strong></summary>
 
 Exploring ways to turn repetitive work into useful, inspectable workflows.
@@ -111,8 +111,8 @@ The goal: fewer copy-paste rituals, more time for problems worth solving.
 
 ## 🎮 Beyond the Terminal
 
-<details>
-<summary><strong>Expand for cats, questionable aim, and production wisdom.</strong></summary>
+<details open>
+<summary><strong>Cats, questionable aim, and production wisdom.</strong></summary>
 
 - 🐱 **My cat is named `const`** — consistently hungry, surprisingly mutable.
 - 🎮 **I’m a gamer** — my debugging skills transfer better than my aim.
