@@ -156,3 +156,14 @@ There is no package manifest or application start/build/test command at the root
 <!-- END chovy-readme-review -->
 
 [Workspace project index and README review](docs/workspace/README.md)
+
+<!-- BEGIN project-discovery -->
+## 项目定位与实践入口
+
+Nemo’s developer portfolio: full-stack engineering, Web3 applications, AI agent workflows and test automation. TypeScript、React、Go 与区块链开发项目导航。
+
+适合从以下入口阅读实现与接入条件：
+
+- [个人介绍与项目导航](README.md)
+- [中文介绍](README.zh-CN.md)
+<!-- END project-discovery -->
