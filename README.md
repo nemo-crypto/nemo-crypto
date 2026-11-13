@@ -1,5 +1,5 @@
 <p align="center">
-  <picture>
+  <picture> 
     <img src="./assets/hero.svg" alt="Hi, I'm Nemo — Full-Stack Developer, Web3 Builder, and Professional Debugger. From pixels to pipelines, wallets to workflows." width="100%" />
   </picture>
 </p>
