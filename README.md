@@ -5,8 +5,13 @@
 </p>
 
 <p align="center">
+  <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
   <a href="#about">About</a> ·
   <a href="#build">What I Build</a> ·
+  <a href="#projects">Projects</a> ·
   <a href="#stack">Tech Stack</a> ·
   <a href="#agents">AI &amp; Automation</a> ·
   <a href="#off-duty">Off Duty</a>
@@ -51,6 +56,16 @@ My work spans public blockchain applications, prediction markets, and exchange p
 | **🔮 Web3 & Prediction Markets** | Wallet-connected applications, transaction flows, market discovery, live probability updates, positions, and settlement views. Making complex states understandable, one fewer “pending…” at a time. |
 
 </details>
+
+<a name="projects"></a>
+
+## 📚 Projects to Explore
+
+| Project | What you can learn |
+| :--- | :--- |
+| [monorepo](https://github.com/nemo-crypto/monorepo) | pnpm workspaces, shared TypeScript packages, dependency boundaries, and CI. |
+| [express](https://github.com/nemo-crypto/express) | Express 5 REST APIs, request validation, pagination, and API tests. |
+| [QA-Automation](https://github.com/nemo-crypto/QA-Automation) | Playwright, Appium, and pytest workflows for web, API, and mobile testing. |
 
 <a name="stack"></a>
 
