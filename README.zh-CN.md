@@ -5,12 +5,13 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/nemo-crypto">← 返回个人首页 · Back to profile</a>
+  <a href="./README.md">English</a> · <strong>简体中文</strong> · <a href="https://github.com/nemo-crypto">返回个人首页</a>
 </p>
 
 <p align="center">
   <a href="#about">关于我</a> ·
   <a href="#build">我在构建什么</a> ·
+  <a href="#projects">项目入口</a> ·
   <a href="#stack">技术栈</a> ·
   <a href="#agents">AI 与自动化</a> ·
   <a href="#off-duty">终端之外</a>
@@ -55,6 +56,16 @@
 | **🔮 Web3 与预测市场** | 连接钱包的应用、交易流程、市场浏览与发现、实时概率更新、持仓和结算视图。让复杂状态更容易理解，也让用户少盯一次“处理中……”。 |
 
 </details>
+
+<a name="projects"></a>
+
+## 📚 项目入口
+
+| 项目 | 可以学习的内容 |
+| :--- | :--- |
+| [monorepo](https://github.com/nemo-crypto/monorepo) | pnpm 工作区、TypeScript 共享包、依赖边界与 CI。 |
+| [express](https://github.com/nemo-crypto/express) | Express 5 REST API、请求校验、分页与接口测试。 |
+| [QA-Automation](https://github.com/nemo-crypto/QA-Automation) | 使用 Playwright、Appium 与 pytest 开展 Web、API 和移动端测试。 |
 
 <a name="stack"></a>
 
